@@ -1,0 +1,192 @@
+#include "InKey.ch"
+#include "Box.ch"
+
+#define COLOR_STATUS "B/W"
+
+// --------------------------------------------------------------------------
+
+function Main( cFileName )
+
+    TextEdit( cFileName, 5, 5, 20, 50 )
+
+return
+
+// --------------------------------------------------------------------------
+
+function TextEdit( cFileName, nTop, nLeft, nBottom, nRight, lStatusLine )
+
+    local oText
+    local lEnd        := .f.
+    local cFind       := ""
+    local cSave       := "Y"
+    local cBottomBack := ""
+    local cClrOld     := SetColor()
+    local nLine       := 1
+
+    lStatusLine = If( lStatusLine != nil, lStatusLine, .t. )
+    nTop        = If( nTop != nil, nTop, 0 )
+    nLeft       = If( nLeft != nil, nLeft, 0 )
+    nBottom     = If( nBottom != nil, nBottom, MaxRow() )
+    nRight      = If( nRight != nil, nRight, MaxCol() )
+
+    oText = TText():New( nTop + If( lStatusLine, 1, 0 ),;
+                         nLeft, nBottom, nRight )
+
+    if Empty( cFileName )
+       return
+    endif
+
+    SAVE SCREEN
+    SET SCOREBOARD OFF
+    SET COLOR TO "B/W"
+
+    oText:Load( cFileName )
+    oText:lIns = .t.
+    oText:cClrLine = "W+/G"
+    if lStatusLine
+       @ nTop, nLeft      SAY Space( nRight - nLeft + 1 )
+       @ nTop, nLeft + 36 SAY Lower( CurDir() ) + "\" + oText:cFileName
+    endif
+    oText:Display()
+
+    do while ! lEnd
+
+       SET CURSOR OFF
+       if lStatusLine
+          @ nTop, nLeft      SAY oText:nStartRow + oText:nRow PICTURE "L 999"
+          @ nTop, nLeft +  9 SAY oText:nStartCol + oText:nCol PICTURE "C 999"
+          @ nTop, nLeft + 18 SAY If( oText:lIns, "I", " " )
+          @ nTop, nLeft + 27 SAY Memory( 0 ) PICTURE "999k"
+          @ nTop, nLeft + 35 SAY If( oText:lChanged, "*", " " )
+       endif
+       SetPos( oText:nTop + oText:nRow, oText:nLeft + oText:nCol )
+       SetCursor( If( oText:lIns, 2, 1 ) )
+
+       nKey = InKey( 0 )
+
+       do case
+          case nKey == K_F1
+               Alert( "::nStartCol = " + AllTrim( Str( oText:nStartCol ) ) + ";::nCol = " + AllTrim(
+
+          case nKey == K_ESC
+               lEnd = .t.
+
+          case nKey == K_ENTER
+               oText:InsLine()
+
+          case nKey == K_INS
+               oText:ToggleIns()
+
+          case nKey == K_DEL
+               oText:DelRight()
+
+          case nKey == K_BS
+               oText:DelLeft()
+
+          case nKey == K_ALT_Y
+               oText:Save()
+
+          case lKeyCtrl() .and. nKey == K_CTRL_C   // to avoid PgDn conflicts
+               oText:CenterLine()
+
+          case nKey == K_CTRL_J
+               cBottomBack = SaveScreen( nBottom, nLeft, nBottom, nRight )
+               @ nBottom, nLeft SAY Space( nRight - nLeft + 1 )
+               @ nBottom, nLeft + 1 SAY "Go To Line:" GET nLine PICTURE "9999"
+               READ
+               RestScreen( nBottom, nLeft, nBottom, nRight, cBottomBack )
+               if Lastkey() != K_ESC
+                  oText:GotoLine( nLine )
+               endif
+
+          case nKey == K_CTRL_Q
+               nKey = InKey( 0 )
+               do case
+                  case Chr( nKey ) $ "Ff"
+                       cBottomBack = SaveScreen( nBottom, nLeft, nBottom,;
+                                                 nRight )
+                       @ nBottom, nLeft SAY Space( nRight - nLeft + 1 )
+                       @ nBottom, nLeft SAY " Find:" GET oText:cFind
+                       READ
+                       RestScreen( nBottom, nLeft, nBottom, nRight, cBottomBack )
+                       if LastKey() != K_ESC
+                          oText:Find()
+                       endif
+               endcase
+
+          case nKey == K_CTRL_U
+               oText:RecoverLine()
+
+          case nKey == K_CTRL_PGUP
+               oText:GoTop()
+
+          case nKey == K_CTRL_PGDN
+               oText:GoBottom()
+
+          case nKey == K_TAB
+               oText:TabDisplay()
+
+          case nKey == K_LEFT
+               oText:GoLeft()
+
+          case nKey == K_RIGHT
+               oText:GoRight()
+
+          case nKey == K_UP
+               oText:GoUp()
+
+          case nKey == K_DOWN
+               oText:GoDown()
+
+          case nKey == K_HOME
+               oText:GoHome()
+
+          case nKey == K_END
+               oText:GoEnd()
+
+          case nKey == K_PGUP
+               oText:PageUp()
+
+          case nKey == K_PGDN
+               oText:PageDown()
+
+          case nKey == K_CTRL_Y
+               oText:DelLine()
+
+          case nKey == K_CTRL_N
+               oText:NewLine()
+               oText:GoUp()
+
+          case nKey == K_F6
+               oText:DelToEol()
+
+          case nKey == K_F4
+               oText:DupLine()
+
+          case nKey == K_ALT_X
+               cBottomBack = SaveScreen( nBottom, nLeft, nBottom, nRight )
+               @ nBottom, nLeft SAY Space( nRight - nLeft + 1 )
+               @ nBottom, nLeft SAY " Save ? (Y/N)" GET cSave
+               READ
+               RestScreen( nBottom, nLeft, nBottom, nRight, cBottomBack )
+               if Chr( LastKey() ) $ "Yy" .or. LastKey() == K_ENTER
+                  oText:Save()
+               endif
+               lEnd = .t.
+
+          otherwise
+               oText:SetChar( Chr( nKey ) )
+       endcase
+    enddo
+
+   SetColor( cClrOld )
+   REST SCREEN
+
+return nil
+
+// --------------------------------------------------------------------------
+
+T
+^ Aqu¡ arriba hay una T
+
+// --------------------------------------------------------------------------

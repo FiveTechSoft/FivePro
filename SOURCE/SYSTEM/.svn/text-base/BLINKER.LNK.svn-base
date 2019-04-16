@@ -1,0 +1,7 @@
+BLINKER EXECUTABLE DUAL
+fi test, c_system
+SEARCH c:\blinker\lib\blxclp52
+lib c:\clipper5\lib\clipper
+lib c:\clipper5\lib\extend
+lib c:\clipper5\lib\dbfntx
+lib c:\clipper5\lib\terminal

@@ -1,0 +1,69 @@
+#
+# Blinker script for ObjectsP.lib (c) 1993 F.Pulp¢n / A.Linares
+#
+# Este es el script para blinker que con mas o menos moficaciones, seg£n
+# los casos, solemos aconsejar. Va bastante bien con aplicaciones normales
+# teniendo un relaci¢n Carga del exe / velocidad de ejecuci¢n muy buena.
+#
+
+
+beginarea
+   allocate ObjectsP   # pone en overlay toda la librer¡a menos
+                       # los m¢dulos "xsend", "opstpeje" y "command".
+endarea
+
+mod xsend       # debe estar en root. Si se enlaza xsend debe estar
+                # tambien en el root "opstpeje" y los m¢dulos de
+                # clases de bajo nivel que llamen a xsend.
+
+mod opstpeje    # es peque¤ito y de todos modos practicamente nunca
+                # ser  descartado. Mejor ponerlo en la raiz.
+
+mod command     # llama a xsend con m‚todos de una clase creada a bajo
+                # nivel.
+
+
+
+# area de overlay para algunos m¢dulos de Clipper.lib y extend.lib
+beginarea
+   mod appinit
+   mod box
+   mod cmem
+   mod date
+   mod dbcmd0
+   mod dbcmd1
+   mod dbcmd2
+   mod dbcmd3
+   mod dbcmd4
+   mod dbcmd5
+   mod errsys0
+   mod errsys1
+   mod joinlist
+   mod lupdate
+   mod memory
+   mod run
+   mod startsym
+   mod txopen
+
+   allocate extend
+
+   mod gete
+   mod diskspac
+   mod memoread
+   mod memowrit
+   mod memotran
+   mod memoline
+   mod mlcount
+   mod mlctopos
+   mod memoedit
+   
+
+endarea
+
+ mod tbrowse0    # los tbrowse iran mas r pidos y suaves.
+ mod tbrowse1
+ mod linelen     # idem con los memoedit().
+
+sea clipper
+sea terminal
+sea dbfntx

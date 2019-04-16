@@ -1,0 +1,21 @@
+!short:^A1F            ^A10‹                    ‹‹^A40ﬂﬂﬂ^A10‹‹               ‹‹‹^A20ﬂﬂﬂﬂ^A10‹‹‹           ^A1F    
+!short:^A1F  ^A10        ‹^A50ﬂ€ﬂ^A10‹              ‹‹^A40ﬂﬂ^A14€€€€€€€^A40ﬂﬂ^A10‹‹        ‹^A20ﬂﬂ ^A12€€€€€€€€^A22 ^A20ﬂﬂ^A10‹        ^A1F    
+!short:^A1F  ^A10      ‹^A50ﬂ^A15€€^A50€ﬂ‹ﬂ^A10‹          €^A40ﬂ‹‹^A14€€€€€€€€^A44   ^A40‹‹€^A10€     ^A20€  ^A12€€€€€€€€€€^A22 ^A20ﬂ‹ﬂ€^A10‹         ^A1F 
+!short:^A1F  ^A10    ‹^A50ﬂ^A15€€€€^A50€ﬂ‹ﬂ‹ﬂ^A10‹        €^A14€€€^A40ﬂﬂ‹‹^A14€^A44  ^A40‹‹€ﬂ‹ﬂ‹^A10€    ^A20€  ^A12€€^A1F€€^A12€€€€€€€€^A22 ^A20‹ﬂ‹^A10€         ^A1F 
+!short:^A1F  ^A10  ‹^A50ﬂ^A15€€€€€€^A50€ﬂ‹ﬂ‹ﬂ‹ﬂ^A10‹      €^A14€€€€€^A44 ^A14€^A40ﬂﬂ€‹ﬂ‹ﬂ‹ﬂ‹^A10€    ^A20€ ^A12€€€€€€€€€€€€^A22 ^A20ﬂ‹ﬂ‹^A10€          
+!short:^A10  ‹^A50ﬂ^A15€€€€€€€€^A55 ^A50€‹ﬂ‹ﬂ‹ﬂ‹ﬂ^A10‹    €^A14€€€€€€€€€^A40€‹ﬂ‹ﬂ‹ﬂ‹^A10€    ^A20€ ^A12€€€€€€€€€€€^A22 ^A20‹ﬂ‹ﬂ‹^A10€          
+!short:^A10  €^A15€€€€€€€€€^A55 ^A50€‹ﬂ‹ﬂ‹ﬂ‹€^A10ﬂ‹   €^A14€€€€€^A44 ^A14€€€^A40€‹ﬂ‹ﬂ‹ﬂ‹^A10ﬂ‹ ‹ ‹^A20€  ^A12€€€€€€€€€€^A20‹ﬂ‹ﬂ‹^A10€          
+!short:^A10   ﬂﬂ^A50‹‹^A15€€€€€^A55 ^A50€‹ﬂ‹ﬂ‹€^A10ﬂ‹ﬂ‹ﬂ‹ ﬂﬂ^A40‹‹^A14€€€€€€^A40€‹ﬂ‹ﬂ‹^A10ﬂ‹ﬂ‹ﬂ‹ﬂ‹ﬂ€^A20‹^A12€€€^A22 ^A12€€€^A22 ^A20‹ﬂ‹ﬂ‹€^A10ﬂ‹ﬂ‹ﬂ‹ﬂ‹ﬂ‹  
+!short:^A10       ﬂﬂ^A50‹‹^A15€€^A50€‹ﬂ‹^A10€ﬂ‹ﬂ‹ﬂ‹ﬂ‹ﬂ‹   ﬂﬂ^A40‹‹^A14€€^A40€‹ﬂ‹^A10ﬂ‹ﬂ‹ﬂ‹ﬂ‹ﬂ‹ﬂ‹ﬂ€^A20‹‹ ^A12€€^A22 ^A20ﬂ‹€‹^A10€ﬂ‹ﬂ‹ﬂ‹ﬂ‹ﬂ‹ﬂ‹  
+!short:^A10           ﬂﬂﬂﬂﬂﬂ ﬂ ﬂ ﬂ ﬂ ﬂ        ﬂﬂﬂﬂﬂ‹ﬂ‹ﬂ‹ﬂ‹ﬂ‹ﬂ‹ﬂ     ﬂﬂﬂﬂﬂﬂ‹ﬂ‹ﬂ‹ﬂ‹ﬂ‹ﬂ‹ﬂ‹ﬂ‹  
+!short:^A10              ^A1E  Programaci¢n Orientada al Objeto para Clipper^A10 ^A1E5^A10 ﬂ ﬂ‹ﬂ‹ﬂ‹ﬂ‹ﬂ‹ﬂ   
+!short:^A10        ^A1E                    ≠ Nueva versi¢n !                  ^A10                 
+!short:^A10         ^A4F⁄^A70≥˛≥^A50          ^A5FObjects para Clipper ver 1.5          ^A70≥≥≥≥^A4Fø^A1F  ^A1E   ^A1F      ^A10
+!short:^A10   ^A1F      ^A4F≥^A3F ^A30* Hereda directamente de TBrowse, TbColumn, Get, Error  ^A4F≥^A0F ^A10€^A1E  ^A10
+!short:^A10         ^A4F≥^A3F ^A30* Herencia sencilla y m£ltiple. Funciona con el debugger^A4F≥^A0F ^A10€
+!short:^A10         ^A4F≥^A3F ^A30* Sintaxis compatible con V.O.(ASPEN) y C++             ^A4F≥^A0F ^A10€
+!short:^A10         ^A4F≥^A3F ^A30* Jerarqu°as de Clases listas para usar, Inspector de   ^A4F≥^A0F ^A10€
+!short:^A1F   ^A10      ^A4F≥^A3F   ^A30Objetos y Hojeador de Clases                          ^A4F≥^A0F ^A10€
+!short:^A10         ^A4F≥^A3F ^A30* Nuevos mÇtodos Constructor, Virtual, Block y SetGet   ^A4F¡^A0F ^A10€
+!short:^A10         ^A4F¿ƒƒƒƒƒƒƒƒƒƒƒƒƒƒ^A7F ^A70(C) Antonio Linares, 1993 ^A4Fƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ¥ ^A10€€
+!short:^A10           €€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€

@@ -1,0 +1,10 @@
+.prg.obj:
+   clipper $< /n/w
+
+.obj.exe:
+   blinker fi ide @ide
+   ide
+
+ide.obj : ide.prg
+ide.exe : ide.obj ..\lib\FivePro2.lib ide.lnk
+

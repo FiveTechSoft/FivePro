@@ -1,0 +1,61 @@
+                PAGE   55,132
+
+; Funci¢n:      Determinar la direcci¢n de un pixel del buffer en modos
+;               originales de EGA y CGA:
+;                       320x200 16 colores
+;                       640x200 16 colores
+;                       640x350 16 colores
+;                       640x350 monocromo (4 colores)
+;                       640x480 2 colores
+;                       640x480 16 colores
+;
+; PQLL:         AX = coordenada y
+;               BX = coordenada x
+;
+; Devuelve:     AH = m scara de bit
+;               BX = desplazamiento de byte en el buffer
+;               CL = cantidad de bits a desplazar a la izquierda
+;               ES = segmento del buffer de v¡deo
+;
+
+
+BytesPerLine    EQU     80              ; Byte en una l¡nea horizontal
+OriginOffset    EQU     0               ; Desplazamiento de byte de (0,0)
+VideoBufferSeg  EQU     0A000h
+
+_TEXT           SEGMENT byte public 'CODE'
+                ASSUME  cs:_TEXT
+
+                PUBLIC  _PixelDir
+_PixelDir       PROC    far
+
+                mov     cl,bl           ; CL := byte de orden bajo de x
+
+                push    dx              ; Introduce DX en la pila
+
+                mov     dx,BytesPerLine ; AX := y * BytesPerLine
+                mul     dx
+
+                pop     dx
+                shr     bx,1
+                shr     bx,1
+                shr     bx,1            ; BX := x/8
+                add     bx,ax           ; BX := y*BytesPerLine + x/8
+                add     bx,OriginOffset ; BX := desplazamiento de byte en el
+					;	buffer de v¡deo
+
+                mov     ax,VideoBufferSeg
+                mov     es,ax           ; ES:BX := direcci¢n de byte de pixel
+
+                and     cl,7            ; CL := x & 7
+                xor     cl,7            ; CL := cantidad de bits a desplazar
+                                        ;       a la izquierda
+                mov     ah,1            ; AH := m scara de bit sin desplazar
+
+                ret
+
+_PixelDir       ENDP
+
+_TEXT           ENDS
+
+                END

@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/svn/!svn/ver/3/trunk/SOURCE/ASPEN
+END
+BLOCK.CPP
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/3/trunk/SOURCE/ASPEN/BLOCK.CPP
+END
+ASPEN.LIB
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/3/trunk/SOURCE/ASPEN/ASPEN.LIB
+END
+MAIN.PRG
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/3/trunk/SOURCE/ASPEN/MAIN.PRG
+END
+ASPEN.H
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/3/trunk/SOURCE/ASPEN/ASPEN.H
+END
+ASPEN.RMK
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/3/trunk/SOURCE/ASPEN/ASPEN.RMK
+END
+ITEM.CPP
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/3/trunk/SOURCE/ASPEN/ITEM.CPP
+END
+ARRAY.CPP
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/3/trunk/SOURCE/ASPEN/ARRAY.CPP
+END
+FILE.CPP
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/3/trunk/SOURCE/ASPEN/FILE.CPP
+END
+TEST.CPP
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/3/trunk/SOURCE/ASPEN/TEST.CPP
+END
+PARAM.CPP
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/3/trunk/SOURCE/ASPEN/PARAM.CPP
+END
+ASPEN.TXT
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/3/trunk/SOURCE/ASPEN/ASPEN.TXT
+END

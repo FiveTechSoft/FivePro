@@ -1,0 +1,544 @@
+!short: ^BCreaci¢n de nuevas Clases^N                                                   
+
+ La principal cualidad de Objects es el permitir la creaci¢n de nuevas Clases
+ totalmente compatibles con Clipper. Esto nos permite dise¤arnos nuestras
+ propias Clases con las que podemos conseguir una funcionalidad similar ¢
+ superior a las cuatro Clases predefinidas que trae Clipper 5.
+
+ Adem s, los Objetos de las nuevas Clases pueden ser perfectamente
+ inspeccionados con el debugger de Clipper, y sus Clases pueden almacenarse
+ en librer¡as, con lo que podemos crearnos nuetras propias librer¡as de
+ Clases, del mismo modo que cuando creamos librer¡as de funciones.
+
+ El proceso de creaci¢n de una Clase consta de dos etapas:
+
+ 1.- Declaraci¢n de la Clase.
+ 2.- Codificaci¢n de sus M‚todos.
+
+ Acto seguido ya estaremos preparados para crear un nuevo Objeto de esa
+ Clase y comenzar a utilizarlo.
+
+!short:ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+!short: NOMBRECLASE.PRG                                                             
+
+ Lo m s recomendable es el crear un nuevo fichero PRG en el que codificaremos
+ la nueva Clase. Esto incrementa la modularidad de dise¤o de un programa. Lo
+ ideal es que el nombre del fichero PRG sea igual al nombre de la Clase que
+ contenga.
+
+ Por motivos de dise¤o interno, tan s¢lo debemos almacenar una Clase por
+ fichero PRG.
+
+!short:ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+!short:
+!short: 1.- Declaraci¢n de la Clase                                                 
+
+ Lo primero que hemos de hacer es codificar la declaraci¢n de la Clase.
+
+ La declaraci¢n de la Clase es c¢mo un esquema de toda la funcionalidad de
+ sus Objetos.
+
+ En la declaraci¢n se especifica:
+
+ - El Nombre de la Clase y, opcionalmente, de que otras Clases deriva.
+ - Los Datos que contendr n los Objetos de esa Clase.
+ - Los M‚todos que rigen el comportamiento de los Objetos de esa Clase.
+
+!short:
+!short: ^B#include "Objects.ch"^N                                                       
+
+ Es imprescindible el incluir este fichero de cabecera cada vez que dise¤emos
+ una nueva Clase. Sin embargo, no es necesario utilizarlo para usar un Objeto
+ de esa Clase.
+
+ Gracias al extraordinario preprocesador de Clipper 5, podemos utilizar una
+ sintaxis al m s puro estilo OOPS.
+
+!short:
+!short: ^BCLASS^N NombreClase [ ^BFROM^N ClasePadre1 [, ClasePadreN ] ]                     
+
+ El nombre de la Clase no puede exceder de diez caracteres. Esta es una
+ limitaci¢n que impone Clipper.
+
+ Lo m s frecuente es comenzar el nombre de una clase con la letra 'T'. La
+ principal raz¢n de hacer esto es para distinguir el nombre de una funci¢n
+ del nombre de una Clase.
+
+ Ejemplo:
+
+ CLASS TVentana
+
+    ...
+
+ En nuestros programas escribiremos:
+
+ local vntPrincipal := TVentana():New( par metros,... )
+
+
+ As¡, cuando posteriormente veamos TVentana() sabremos que es el constructor
+ por defecto de una Clase y no una funci¢n.
+
+ Clipper ha utilizado este sistema con sus Clases TBrowse y TbColumn, aunque
+ ha 'camuflado' los constructores para que se utilicen c¢mo funciones.
+
+ TbrowseNew() debiera haber sido TBrowse():New( ... ).
+
+ C¢mo veremos m s adelante, podemos facilmente implementar nuevamente la
+ t¡pica sintaxis OOPS en las propias Clases predefinidas de Clipper.
+
+!short:
+!short:    ^BDATA^N NombreDato1  [, NombreDatoN ]                                       
+
+ A continuaci¢n se especifican los nombres de los Datos de los Objetos de esa
+ Clase.
+
+ Podemos especificar varios nombres de Datos en la misma l¡nea de c¢digo, ¢
+ podemos especificar uno por l¡nea.
+
+ Lo m s corriente es agruparlos por tipo. As¡, utilizando la Notaci¢n H£ngara
+ podemos agrupar los de tipo 'C' caracter, 'L' l¢gico, 'N' num‚ricos, etc...
+
+   CLASS TVentana
+
+      DATA nArriba, nIzquierda, nAbajo, nDerecha
+      DATA cFondo, cColor, cTitulo
+      DATA lVisible, lMaximizable
+      ...
+
+ Puedes utilizar VAR ¢ INSTVAR en vez de la cla£sula DATA, para compatibilizar
+ con Classy ¢ SuperClass.
+
+ Personalmente discrepo en esto ya que considero que lo correcto es
+ denominarlos DATA, puesto que son DATOS del Objeto.
+
+ VAR corresponde m s a variable y en realidad son los Objetos son los que son
+ nuevos tipos de variables y no sus datos.
+
+ Es algo que no tiene excesiva importancia. Puedes utilizar lo que m s te
+ agrade.
+
+!short:    ^BDATA^N NombreDatoN [ ^UREADONLY^N ]                                            
+
+      DATA cImagen READONLY              // Datos de 'SOLO-LECTURA'
+
+ Podemos especificar la cla£sula READONLY (s¢lo lectura) en aquellos Datos
+ que no queramos que sean manipulados por los usuarios de nuestras Clases.
+ A este tipo de Datos se les suele denominar 'protegidos' ¢ 'privados'.
+
+ MUY IMPORTANTE: Debemos evitar en lo posible el utilizar este tipo de datos
+ ya que enlentecen mucho la ejecuci¢n del programa. Hasta que no est‚
+ disponible una versi¢n de Clipper 5 que soporte plenamente la creaci¢n de
+ nuevas Clases y hasta que ellos no codifiquen estas caracter¡sticas, en las
+ actuales librer¡as para la creaci¢n de Clases -c¢mo Objects- el utilizar
+ este tipo de Datos enlentece la ejecuci¢n. ­ Ev¡talos !
+
+!short:
+!short:    ^BMETHOD^N NombreM‚todo( [ Param1 [, ParamN ] ] ) ^UCONSTRUCTOR^N                
+
+ Lo m s aconsejable es declarar en primer lugar el/los m‚todo/s CONSTRUCTORES.
+
+ Un m‚todo CONSTRUCTOR se encarga de inicializar un Objeto adecuadamente para
+ que podamos utilizarlo sin ning£n problema en nuestro programa. Podemos tener
+ tantos m‚todos constructores c¢mo distintas inicializaciones vayamos a
+ necesitar.
+
+ Por tradici¢n de C++ al m‚todo constructor principal se le denomina 'New'.
+ Aunque podemos utilizar cualquier nombre en vez de 'New'. Parece ser que
+ las pr¢ximas versiones de Clipper y el proyecto Visual Objects (ASPEN)
+ utilizar n el nombre 'Init' en vez de 'New'. ( Tambien parece que de existir
+ el m‚todo 'Init' este ser  llamado autom ticamente al crear un Objeto. Esto
+ se puede implementar sin excesivas complicaciones en esta versi¢n. Te
+ recuerdo que ­tienes los fuentes! de Objects.lib ).
+
+ Es imprescindible especificar los par metros que est‚ m‚todo vaya a
+ necesitar. No hay ning£n inconveniente en nombrar a los par metros con el
+ mismo nombre que alguno de los datos del Objeto ( al contrario de c¢mo
+ ocurre en C++ ).
+
+ Una de las caracter¡sticas de los m‚todos constructores en Clipper es que
+ autom ticamente devuelven una referencia al propio Objeto (Self). Veremos
+ ejemplos de esto m s adelante.
+
+!short:    ^BMETHOD^N NombreM‚todo( [ Param1 [, ParamN ] ] ) ^UBLOCK^N ;                    
+
+ Los m‚todos BLOCK permiten indicar un bloque de c¢digo que se ejecutar 
+ en vez de tener que codificar aparte su correspondiente METHOD ...
+
+ En aquellos m‚todos que sean peque¤os, este es un excelente sistema que
+ permite reducir nuestro c¢digo y ganar en modularidad ya que podemos ver
+ de inmediato la funcionalidad de un determinado m‚todo.
+
+ C¢mo primer par metro del bloque de c¢digo debes especificar Self, ya
+ que se le enviar  autom ticamente una referencia al propio Objeto. Tambien
+ has de especificar todos los par metros que hayas incluido dentro de
+ los par‚ntesis de declaraci¢n del M‚todo.
+
+    METHOD Nombre( Parms,... ) BLOCK { | Self, Parms,... | ... }
+
+ Desde dentro del bloque de c¢digo puedes llamar a cualquier funci¢n. Si
+ deseas devolver una referencia al propio Objeto al final de la ejecuci¢n
+ del m‚todo, especifica 'Self' c¢mo £ltimo elemento del bloque de c¢digo:
+
+    METHOD Nombre( Parms,... ) BLOCK { | Self, Parms,... | ..., Self }
+
+ Este tipo de m‚todos se corresponde a los m‚todos INLINE de C++.
+
+ Has de tener cuidado al especifir bloques de c¢digo dentro del bloque de
+ c¢digo principal, ya que puede ocurrir que determinados variables que
+ utilices no esten accesibles (es un limitaci¢n de Clipper). Si el
+ compilador te indica este tipo de problema, entonces tendr s que c¢dificar
+ este m‚todo al estilo 'normal'.
+
+!short:                    { | Self [,Param1 [, ParamN ] ] | Acciones,,, }
+!short:    ^BMETHOD^N NombreM‚todo( [ Param1 [, ParamN ] ] ) ^USETGET^N                     
+
+ Los m‚todos SETGET simulan ser DATOS pero en realidad, por ser m‚todos,
+ realizan acciones.
+
+ Un m‚todo SETGET ser  llamado automaticamente para pedir ¢ asignar un
+ determinado valor. Esto quiere decir que el c¢digo que especifiquemos dentro
+ de SETGET ser  llamado para pedir ¢ para asignar, exactamente igual que si
+ se tratase de un dato del Objeto:
+
+    CLASS ...
+
+       ...
+       METHOD Color( cColor ) SETGET
+       ...
+
+    ENDCLASS
+
+
+    METHOD Color( cColor ) CLASS ...
+
+       local result
+
+       if PCount() > 1          // Se va a efectuar una asignaci¢n
+
+          ...                   // podemos realizar cualquier tipo de acci¢n
+
+       else                     // Se est  pidiendo un valor
+
+          result = ...          // podemos realizar cualquier tipo de acci¢n
+
+       endif
+
+    return result               // Ah¡ va el valor solicitado
+
+ PCount() nos permite identificar si es una acci¢n SET de asignaci¢n ¢
+ GET de petici¢n.
+
+ As¡ en nuestro programa podemos hacer:
+
+    Objeto:Color = "W+/B"
+
+    ¢
+
+    ? Objeto:Color
+
+ Parece que estamos usando un dato del Objeto pero en realidad estamos
+ realizando determinados procesos.
+
+ La idea y la necesidad de dise¤ar este tipo de m‚todos, me vino al codificar
+ determinadas Clases para Windows (puedes utilizar Objects con Clip4Win para
+ dise¤ar clases que funcionen en MicroSoft Windows). Windows almacena dentro
+ de ‚l todos los datos de una determinada ventana.
+
+ Al codificar la clase Ventana para Windows, comprob‚ que era absurdo el
+ mantener dentro de mi objeto determinados datos ya que Windows era quien
+ los guardaba y esto llevar¡a a una duplicidad y adem s conllevaba el peligro
+ de un desajuste entre sus valores.
+
+ Pens‚ que ser¡a muy util el disponer de un tipo de m‚todo que simulase el
+ comportamiento de un dato pero que en realidad realizase acciones.
+
+ Por otra parte, mi amigo Antonio Rojo me hizo ver la necesidad de disponer
+ de determinados datos cuya manipulaci¢n fuese 'procesable', es decir
+ pudi‚semos realizar determinadas comprobaciones, inicializaciones, etc...
+
+ La implementaci¢n de los m‚todos SETGET es muy simple, sin embargo su
+ potencia y posibilidades son enormes.
+
+ Aqu¡ tienes un ejemplo de utilizaci¢n en Windows:
+
+       ...
+       DATA hWnd        // Handle de Windows para nuestra ventana
+
+       METHOD cTitle( cNewTitle ) SETGET
+
+   ENDCLASS
+
+   ...
+
+   METHOD cTitle( cNewTitle ) CLASS TWindow
+
+      local cResult
+
+      if PCount() > 1
+         SetWindowText( ::hWnd, cNewTitle )     // Windows guarda el DATO
+      else
+         cResult = GetWindowText( ::hWnd )      // Windows guarda el DATO
+      endif
+
+   return cResult
+
+ Ahora, en nuestro programa podemos escribir:
+
+   ? wnd:cTitle                          // Parece que estamos utilizando
+                                         // un dato del Objeto
+   wnd:cTitle = "Probando, probando..."
+
+!short:    ^BMETHOD^N NombreM‚todo( [ Param1 [, ParamN ] ] ) ^UVIRTUAL^N                    
+
+ Un m‚todo VIRTUAL no hace nada. Luego si no hace nada... ¨ Para que nos
+ hace falta ?
+
+ A veces nos veremos en la necesidad de utilizar un determinado m‚todo
+ puesto que ser  necesario en nuestro an lisis, sin embargo ser n las
+ Clases Derivadas de nuestra Clase las que redefiniran este m‚todo virtual
+ y entonces si tendr  sentido y utilidad.
+
+ Obviamente no es necesario el codificar un m‚todo virtual tras la declaraci¢n
+ de la Clase. Un m‚todo virtual es equivalente a un m‚todo BLOCK:
+
+              METHOD Nombre( ... ) BLOCK { || nil }
+
+ Puede ser que no entiendas ahora la utilidad de los m‚todos VIRTUALES, sin
+ embargo te aseguro que sabr s reconocerlos cuando te hagan falta.
+
+ Ejemplo del mundo real:
+
+ Imagina un fabricante de autom¢viles que ofreciese la posibilidad de utilizar
+ distintos carburadores en su coche. Lo l¢gico ser¡a tener en cuenta el lugar
+ que ocupar  el carburador y c¢mo ser  utilizado, sin embargo hasta que el
+ comprador no decida cual adquirir , en ese lugar no habr  nada.
+
+ Ejemplo en Clipper:
+
+ CLASS TVisual
+
+   DATA nArriba, nIzquierda, nAbajo, nDerecha
+
+   METHOD Muestra() BLOCK { | Self | SalvaFondo(), ::Dibuja() }
+   METHOD Dibuja()  VIRTUAL
+   ...
+
+ ENDCLASS
+
+
+ CLASS TVentana FROM TVisual
+
+    METHOD Dibuja()     // Una ventana s¡ puede dibujarse,
+                        // un Objeto visual no
+ ENDCLASS
+
+!short:    ^BMETHOD^N NombreM‚todo( [ Param1 [, ParamN ] ] )                            
+
+ En realidad a excepci¢n de los m‚todos constructores, que por lo menos
+ siempre codificaremos uno ( inicializaci¢n b sica del Objeto ) en nuestras
+ Clases, los otros tres tipos de m‚todos: BLOCK, SETGET y VIRUTAL no son tan
+ frecuentes.
+
+ Lo normal es dise¤ar una serie de m‚todos 'normales' que ser n los que m s
+ utilicemos:
+
+ CLASS ...
+
+     DATA ...
+
+     METHOD Metodo1( ... )
+     METHOD Metodo2( ... )
+     ...
+     METHOD MetodoN( ... )
+
+ ENDCLASS
+
+!short:
+!short: ^BENDCLASS^N                                                                    
+
+ ENDCLASS concluye la declaraci¢n de la Clase.
+
+ En realidad, una vez compilemos nuestro fichero PRG, nuestra declaraci¢n
+ de la Clase ser  convertida en una funci¢n que devolver  un Objeto de esa
+ Clase.
+
+ Ese Objeto, recien creado, no estar  inicializado. Es decir, todos sus
+ Datos contendr n el valor NIL. Es por esto, que el primer mensaje que hay
+ que enviar al Objeto es el de inicializaci¢n ( M‚todo Constructor ).
+
+   local ventana := TVentana():New( 2, 2, 10, 20, "Probando" )
+
+   ¢ lo que ser¡a equivalente:
+
+   local ventana := TVentana()                // Objeto no inicializado
+                                              // No utilizable.
+
+   ventana:New( 2, 2, 10, 20, "Probando" )    // Objeto Inicializado
+                                              // Ya es utilizable
+
+ Tr s la declaraci¢n de la Clase comenzamos la codificaci¢n de sus m‚todos.
+
+!short:
+!short:ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+!short:
+!short: 2.- Codificaci¢n de los M‚todos                                             
+
+ Una vez completada la declaraci¢n de la Clase, comenzamos a codificar cada
+ uno de los m‚todos que hemos indicado en la declaraci¢n.
+
+ Recuerda que los M‚todos BLOCK y VIRTUAL no tienen que ser codificados en
+ esta secci¢n. Los m‚todos BLOCK se codifican dentro de un bloque de c¢digo
+ en la misma declaraci¢n de la Clase. Los m‚todos VIRTUAL no se codifican.
+
+ Al codificar los m‚todos no hay que especificar su tipo, esto es, no hay
+ porqu‚ indicar CONSTRUCTOR ¢ SETGET ( en el caso de que sean de este tipo ).
+ Al indicar estas cla£sulas en la declaraci¢n de la Clase, nuestra Clase
+ ya sabe que caracter¡sticas especiales tendr n.
+
+ Es necesario que codifiquemos todos los m‚todos en un mismo PRG. S¢lo
+ debemos codificar una Clase por fichero PRG.
+
+ A continuaci¢n te muestro un esquema gen‚rico de la estructura de un M‚todo.
+
+!short:
+!short: ^BMETHOD^N NombreMetodo( Param1, Param2, ... ) ^BCLASS^N NombreClase                
+
+ Esta sintaxis parece ser que es la que va a utilizar Visual Objetcs para
+ Clipper ( antiguo ASPEN ).
+
+ Objects te ofrece la posibilidad de utilizar otras sintaxis. Puedes utilizar
+ la que m s te agrade, ya que el preprocesador convierte todas a expresiones
+ id‚nticas.
+
+ Por ejemplo, al estilo C++:
+
+ METHOD <NombreClase>::<NombreM‚todo>( Par metros,... )
+
+ En realidad los m‚todos se codifican c¢mo funciones static que reciben
+ autom ticamente una referencia al propio Objeto. En OOPS vamos a utilizar
+ la palabra reservada Self para referirnos al propio Objeto. Self quiere
+ decir 'si mismo'.
+
+ Las principales librer¡as de OOPS, incluida Objects, han acordado la
+ utilizaci¢n del operador '::' c¢mo sustituto de 'Self:'. Por lo que '::'
+ quiere decir 'de si mismo'.
+
+
+!short:
+!short:    ^UDEFAULT^N Param1 := Valor1, Param2 := Valor2, etc...                       
+
+ Aunque este proceso no es exclusivo de OOPS, lo m s frecuente es realizar
+ c¢mo primer paso la comprobaci¢n de los valores por defecto de los
+ par metros recibidos.
+
+    DEFAULT <Var> := <Valor>   ¢ DEFAULT <Var> TO <Valor>
+
+ Son unos preprocesados muy frecuentes ya y que vienen incluidos en la
+ versi¢n 5.2 de Clipper. Objects.ch incluye el primero. Si prefieres usar
+ TO en vez de := puedes modificar el fichero de cabecera Objects.ch.
+
+!short:
+!short:    [ ::^BParent^N:New( Param1, Param2, ... ) ]                                  
+
+ Parent, al igual que Self, es una palabra reservada en OOPS. Parent indica
+ que queremos acceder a un m‚todo de la Clase ascendente de la nuestra.
+
+ Parent, por defecto, hace referencia a la primera Clase de la que derive
+ nuestra Clase, en caso de que estemos utilizando herencia m£ltiple (una
+ Clase que derive de m s de una Clase distinta).
+
+ Por ejemplo, en los m‚todos constructores es muy frecuente llamar al m‚todo
+ New de la Clase padre para que se realice la inicializaci¢n correspondiente
+ a la Clase padre.
+
+ ::Parent quiere decir 'del Padre de si mismo' ¢ 'del Padre de la Clase
+ del Objeto'. Recuerda que el operador '::' quiere decir 'de si mismo'.
+
+ Las acciones que ejecute ::Parent afectan al propio Objeto, es decir, si
+ al acceder a Parent se modifica alg£n Dato, estos cambios de efect£an
+ sobre nuestro propio Objeto.
+
+!short:
+!short:    - Procesos -                                                             
+
+  Dentro del m‚todo podemos realizar diversos procesos, los que necesitemos,
+  del mismo modo en que actuar¡amos en una funci¢n normal.
+
+  Lo £nico que hay que tener presente es que siempre tenemos disponible una
+  referencia al propio Objeto en 'Self'.
+
+  'Self' es c¢mo un par metro que nos llega autom ticamente y que nos permite
+  acceder al propio Objeto. Para simplificar y no tener que escribir
+  constantemente Self: para acceder a un dato del Objeto, utilizamos el
+  operador '::'.
+
+  El operador '::' es equivalente a Self:. Significa 'de s¡ mismo'.
+
+  Puesto que tenemos a nuestra disposici¢n la herencia del OOPS, es
+  importante tener presente que en cualquier momento podemos acceder a un
+  m‚todo de la Clase Padre ( ascendente ) de la Clase de nuestro Objeto
+  haciendo uso de la palabra reservada Parent.
+
+!short:
+!short:       ^B::^NDato1 = ...                                                         
+
+ Desde dentro de un m‚todo podemos acceder a cualquiera de los datos del
+ Objeto. Para acceder a un dato hemos de utilizar la referencia al Objeto
+ que nos ofrece la palabra reservada Self.
+
+ As¡, Self:Dato nos deja manipular un determinado dato.
+
+ Tambien podemos utilizar el operador :: para evitar el tener que escribir
+ constantemente Self:.
+
+ El operador '::' quiere decir 'de s¡ mismo'.
+
+!short:
+!short:       ::M‚todo( ... )                                                       
+
+ Igual que podemos utilizar los datos de un Objeto desde dentro de sus
+ m‚todos, tambien podemos ejecutar otros m‚todos de la Clase del Objeto.
+
+ Igual que utilizamos el operador '::' para referirnos a un dato del Objeto,
+ podemos utilizarlo para ejecutar uno de sus m‚todos.
+
+ La manipulaci¢n de un Dato ¢ la ejecuci¢n de un M‚todo se diferencian en
+ que en el £ltimo es preciso especificar par‚ntesis:
+
+ Self:Dato
+
+ Self:M‚todo( par metros,... )
+
+ ¢ podemos abreviar usando el operador '::' a
+
+ ::Dato
+
+ ::M‚todo( par metros,... )
+
+ Las llamadas a los m‚todos pueden concatenarse, siempre y cuando un m‚todo
+ devuelva Self, esto es, una referencia a s¡ mismo,
+
+    ::M‚todo1():M‚todo2():M‚todo3() ...
+
+!short:
+!short: ^Breturn^N  [ Valor de Retorno ]                                                
+
+ El c¢digo de un m‚todo finaliza, igual que el de una funci¢n, usando return.
+
+ Un m‚todo puede devolver cualquier valor que necesitemos. En este caso
+ especificaremos el valor a devolver despu‚s de return.
+
+ Si deseamos que un m‚todo devuelva una referencia al propio Objeto,
+ entonces devolveremos la palabra reservada Self.
+
+    return              // no devuelve nada
+
+    return nil          // no devuelve nada
+
+    return <Valor>      // devuelve un valor determinado
+
+    return Self         // devuelve una referencia al propio Objeto
+
+!short:
+!short:ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ

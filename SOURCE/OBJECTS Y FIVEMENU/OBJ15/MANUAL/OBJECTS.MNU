@@ -1,0 +1,18 @@
+!name: Objects 1.5 - OOPS para Clipper 5
+
+!credits:
+       ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+       ³            Objects 1.5 para Clipper            ³Û
+       ³           (C) Antonio Linares, 1993            ³Û
+       ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙÛ
+        ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+!menu: Tutorial
+       Acerca de Objects        Logo.ngo
+       Introducci¢n             Intro.ngo
+       Definiciones             definic.ngo
+
+!menu: Sintaxis
+       Creaci¢n de Clases       creacion.ngo
+       Funciones                funcione.ngo
+       Funciones Indocumentadas undoc.ngo
+       Cr‚ditos                 credits.ngo

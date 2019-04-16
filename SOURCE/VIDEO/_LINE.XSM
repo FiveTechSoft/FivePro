@@ -1,0 +1,393 @@
+; Funci¢n:      Dibujar una l¡nea en los siguientes modos gr ficos de EGA y VGA:
+;                       modos 16 colores 200 l¡neas
+;                       modos 350 l¡neas
+;                       16 colores 640x480
+;
+; PQLL:         Microsoft C:
+;
+;                       void Line10(x1,y1,x2,y2,n);
+;
+;                       int x1,y1,x2,y2;        /* Coordenadas del pixel */
+;
+;                       int n;                  /* Valor de pixel */
+;
+
+ARGy1           EQU     word ptr [bp+6] ; Direccionamiento de la pila
+ARGx1           EQU     word ptr [bp+8]
+ARGy2           EQU     word ptr [bp+10]
+ARGx2           EQU     word ptr [bp+12]
+ARGn            EQU     byte ptr [bp+14]
+VARvertincr     EQU     word ptr [bp-2]
+VARincr1        EQU     word ptr [bp-4]
+VARincr2        EQU     word ptr [bp-6]
+VARroutine      EQU     word ptr [bp-8]
+
+ByteOffsetShift EQU     3               ; Utilizado para convertir pixels a 
+                                        ; desplazamiento de byte
+BytesPerLine    EQU     80
+RMWbits         EQU     0               ; Valor para el registro 
+                                        ; Rotar dato/seleccionar funci¢n
+
+
+_TEXT           SEGMENT byte public 'CODE'
+                ASSUME  cs:_TEXT
+
+                EXTRN   _PixelDir:far
+
+                PUBLIC  _Line
+_Line           PROC    far
+
+                push    bp              ; Introduce en la pila los registros
+                mov     bp,sp		; del PQLL
+                sub     sp,8            ; Espacio de pila para variables locales
+                push    si
+                push    di
+
+; Configuraci¢n del controlador de gr ficos
+
+                mov     dx,3CEh         ; DX := direcci¢n del puerto del 
+                                        ;       controlador de gr ficos
+
+                mov     ah,ARGn         ; AH := valor de pixel
+                xor     al,al           ; AL := n£mero del registro Set/reset
+                out     dx,ax
+
+                mov     ax,0F01h        ; AH := 1111b (m scara de plano de bit
+                                        ;       para Activaci¢n de set/reset
+                out     dx,ax           ; AL := n£mero del registro de
+					;	Activaci¢n de set/reset
+
+                mov     ah,RMWbits      ; bit 3 y 4 de AH := funci¢n
+                mov     al,3            ; AL := n£mero del registro
+                                        ;       Rotar dato/seleccionar funci¢n
+                out     dx,ax
+
+; Comprobaci¢n para l¡nea vertical
+
+                mov     si,BytesPerLine ; Incremento para el buffer de v¡deo
+
+                mov     cx,ARGx2
+                sub     cx,ARGx1        ; CX := x2 - x1
+                jz      VertLine10      ; Salta si es una l¡nea vertical
+
+; Fuerza x1 < x2
+
+                jns     L01             ; Salta si x2 > x1
+
+                neg     cx              ; CX := x1 - x2
+
+                mov     bx,ARGx2        ; Intercambia x1 y x2
+                xchg    bx,ARGx1
+                mov     ARGx2,bx
+
+                mov     bx,ARGy2        ; Intercambia y1 e y2
+                xchg    bx,ARGy1
+                mov     ARGy2,bx
+
+; Calculo de dy = ABS(y2-y1)
+
+L01:            mov     bx,ARGy2
+                sub     bx,ARGy1        ; BX := y2 - y1
+                jz      HorizLine10     ; Salta si es una l¡nea horizontal
+
+                jns     L03             ; Salta si la pendiente es positiva
+
+                neg     bx              ; BX := y1 - y2
+                neg     si              ; Incremento negativo para el
+                                        ; entrelazado del buffer
+
+; Selecci¢n de la rutina apropiada para la pendiente de la l¡nea
+
+L03:            mov     VARvertincr,si  ; Salva el incremento vertical
+
+                mov     VARroutine,offset LoSlopeLine10
+                cmp     bx,cx
+                jle     L04             ; Salta si dy <= dx (pendiente <= 1)
+                mov     VARroutine,offset HiSlopeLine10
+                xchg    bx,cx           ; Intercambia dy y dx
+
+; C lculo de la variable de decisi¢n inicial e incrementos
+
+L04:            shl     bx,1            ; BX := 2 * dy
+                mov     VARincr1,bx     ; incr1 := 2 * dy
+                sub     bx,cx
+                mov     si,bx           ; SI := d = 2 * dy - dx
+                sub     bx,cx
+                mov     VARincr2,bx     ; incr2 := 2 * (dy - dx)
+
+; C lculo de la primera direcci¢n de pixel
+
+                push    cx              ; Introduce en la pila este registro
+                mov     ax,ARGy1        ; AX := y
+                mov     bx,ARGx1        ; BX := x
+                call    _PixelDir     ; AH := m scara de bit
+                                        ; ES:BX -> buffer
+                                        ; CL := Cantidad de bits a desplazar 
+                                        ;       a la izquierda
+
+                mov     di,bx           ; ES:DI -> buffer
+                shl     ah,cl           ; AH := m scara de bit en posici¢n
+                                        ;       adecuada
+                mov     bl,ah           ; AH,BL := m scara de bit
+                mov     al,8            ; AL := n£mero del registro de M scara 
+                                        ;       de bit
+
+                pop     cx              ; Recupera este registro
+                inc     cx              ; CX := cantidad de pixels a dibujar
+
+                jmp     VARroutine      ; Salta a la rutina apropiada para
+                                        ; esta pendiente
+
+
+; Rutina para l¡neas verticales
+
+VertLine10:     mov     ax,ARGy1        ; AX := y1
+                mov     bx,ARGy2        ; BX := y2
+                mov     cx,bx
+                sub     cx,ax           ; CX := dy
+                jge     L31             ; Salta si dy >= 0
+
+                neg     cx              ; Fuerza dy >= 0
+                mov     ax,bx           ; AX := y2
+
+L31:            inc     cx              ; CX := cantidad de pixels a dibujar
+                mov     bx,ARGx1        ; BX := x
+                push    cx              ; Introduce en la pila este registro
+                call    _PixelDir     ; AH := m scara de bit
+                                        ; ES:BX -> buffer de v¡deo
+                                        ; CL := cantidad de bits a desplazar 
+                                        ;       a la izquierda
+; Establece par metros del controlador de gr ficos
+
+                shl     ah,cl           ; AH := m scara de bit en posici¢n
+                                        ;       adecuada
+                mov     al,8            ; AL := n£mero del registro de M scara 
+                                        ;       de bit
+                out     dx,ax
+
+                pop     cx              ; Recupera este registro
+
+; Dibuja la l¡nea
+
+L32:            or      es:[bx],al      ; Establece el pixel
+                add     bx,si           ; Incremento a la siguiente l¡nea
+                loop    L32
+
+                jmp     Lexit
+
+
+
+; Rutina para l¡nea horizontal (pendiente = 0)
+
+HorizLine10:
+                push    ds              ; Introduce en la pila DS
+
+                mov     ax,ARGy1
+                mov     bx,ARGx1
+                call    _PixelDir     ; AH := m scara de bit
+                                        ; ES:BX -> buffer de v¡deo
+                                        ; CL := cantidad de bits a desplazar 
+                                        ;       a la izquierda
+                mov     di,bx           ; ES:DI -> buffer
+
+                mov     dh,ah           ; DH := m scara de bit no desplazada
+                                        ;       para el byte m s a la izquierda
+                not     dh
+                shl     dh,cl           ; DH := inverso de la m scara de bit
+                                        ;       para el primer byte
+                not     dh              ; DH := m scara de bit para primer byte
+
+                mov     cx,ARGx2
+                and     cl,7
+                xor     cl,7            ; CL := cantidad de bits a desplazar 
+                                        ;       a la izquierda
+                mov     dl,0FFh         ; DL := m scara de bit no desplazada
+                                        ;       para el byte m s a la derecha
+                shl     dl,cl           ; DL := m scara de bit para £ltimo byte
+
+; Determina el desplazamiento de byte del primer y £ltimo pixels en la l¡nea
+
+                mov     ax,ARGx2        ; AX := x2
+                mov     bx,ARGx1        ; BX := x1
+
+                mov     cl,ByteOffsetShift      ; Cantidad de bits a desplazar 
+						; para convertir pixel a byte
+
+                shr     ax,cl           ; AX := desplazamiento de byte de x2
+                shr     bx,cl           ; BX := desplazamiento de byte de x1
+                mov     cx,ax
+                sub     cx,bx           ; CX := (n£mero de bytes en 
+					;	la l¡nea) - 1
+
+; Obtenci¢n de la direcci¢n del puerto del controlador de gr ficos en DX
+
+                mov     bx,dx           ; BH := m scara de bit para primer byte
+                                        ; BL := m scara de bit para £ltimo byte
+                mov     dx,3CEh         ; DX := puerto controlador de gr ficos
+                mov     al,8            ; AL := n£mero del registro de M scara 
+                                        ;       de bit
+
+; Hace direccionable el de v¡deo a trav‚s de DS:SI
+
+                push    es
+                pop     ds
+                mov     si,di           ; DS:SI -> buffer de v¡deo
+
+; Establece el pixel en el byte de m s a la izquierda de la l¡nea
+
+                or      bh,bh
+                js      L43             ; Salta si alineado por byte (x1 es el
+                                        ; pixel m s a la izquierda en el byte)
+                or      cx,cx
+                jnz     L42             ; Salta si hay m s de un byte en la
+                                        ; l¡nea
+
+                and     bl,bh           ; BL := m scara de bit para la l¡nea
+                jmp     short L44
+
+L42:            mov     ah,bh           ; AH := m scara de bit para primer byte
+                out     dx,ax           ; Actualiza controlador de gr ficos
+
+                movsb                   ; Actualiza planos de bit
+                dec     cx
+
+; Utilizaci¢n de una instrucci¢n m quina 8086 r pida para dibujar el remanente 
+; de la l¡nea
+
+L43:            mov     ah,11111111b    ; AH := m scara de bit
+                out     dx,ax           ; Actualiza el registro M scara de bit
+                rep     movsb           ; Actualiza todos los pixels en la l¡nea
+
+; Establece el pixel en el byte m s a la derecha de la l¡nea
+
+L44:            mov     ah,bl           ; AH := m scara de bit para £ltimo byte
+                out     dx,ax           ; Actualiza el controlador de gr ficos
+
+                movsb                   ; Actualiza los planos de bit
+
+                pop     ds              ; Recupera DS
+                jmp     short Lexit
+
+
+; Rutina para dy <= dx (pendiente <= 1) ; ES:DI -> buffer de v¡deo
+                                        ; AL = n£mero de registro M scara de bit
+                                        ; BL = m scara de bit para el primer
+					;      pixel
+                                        ; CX = n£mero de pixels a dibujar
+                                        ; DX = direcci¢n del puerto del
+					;      controlador de gr ficos
+                                        ; SI = variable de decisi¢n
+LoSlopeLine10:
+
+L10:            mov     ah,bl           ; AH := m scara de bit para el 
+                                        ;       siguiente pixel
+
+L11:            or      ah,bl           ; Posici¢n del pixel actual en la 
+					; m scara
+                ror     bl,1            ; Rota el valor de pixel
+                jc      L14             ; Salta si la m scara de bit est  
+					; girada a la posici¢n de pixel
+					; m s a la izquierda
+
+; M scara de bit no desplazada fuera
+
+                or      si,si           ; Comprueba el signo de d
+                jns     L12             ; Salta si d >= 0
+
+                add     si,VARincr1     ; d := d + incr1
+                loop    L11
+
+                out     dx,ax           ; Registro M scara de bit 
+                or      es:[di],al      ; Establece el pixel remanente
+                jmp     short Lexit
+
+L12:            add     si,VARincr2     ; d := d + incr2
+                out     dx,ax           ; Actualiza el registro M scara de bit
+
+                or      es:[di],al      ; Actualiza los planos de bit
+
+                add     di,VARvertincr  ; Incrementa y
+                loop    L10
+                jmp     short Lexit
+
+; M scara de bit desplazada fuera
+
+L14:            out     dx,ax           ; Actualiza el registro M scara de bit
+
+                or      es:[di],al      ; Actualiza los planos de bit
+                inc     di              ; Incrementa x
+
+                or      si,si           ; Comprueba el signo de d
+                jns     L15             ; Salta si no es negativo
+
+                add     si,VARincr1     ; d := d + incr1
+                loop    L10
+                jmp     short Lexit
+
+L15:            add     si,VARincr2     ; d := d + incr2
+                add     di,VARvertincr  ; Incremento vertical
+                loop    L10
+                jmp     short Lexit
+
+
+; Rutina para dy > dx (pendiente > 1)   ; ES:DI -> buffer de v¡deo
+                                        ; AH = m scara de bit para el primer
+					;      pixel
+                                        ; AL = n£mero de registro M scara de bit
+                                        ; CX = n£mero de pixels a dibujar
+                                        ; DX = direcci¢n del puerto del 
+                                        ;      controlador de gr ficos
+                                        ; SI = variable de decisi¢n
+HiSlopeLine10:
+                mov     bx,VARvertincr  ; BX := incremento de y
+
+L21:            out     dx,ax           ; Actualiza el registro M scara de bit
+                or      es:[di],al      ; Actualiza los planos de bit
+
+                add     di,bx           ; Incrementa y
+
+L22:            or      si,si           ; Comprueba signo de d
+                jns     L23             ; Salta si d >= 0
+
+                add     si,VARincr1     ; d := d + incr1
+                loop    L21
+                jmp     short Lexit
+
+
+L23:            add     si,VARincr2     ; d := d + incr2
+
+                ror     ah,1            ; Gira la m scara de bit
+                adc     di,0            ; Incrementa DI si la m scara est 
+					; girada a la posici¢n de pixel m s
+					; a la izquierda
+
+                loop    L21
+
+
+; Recupera el estado por defecto del controlador de gr ficos y vuelve al PQLL
+
+Lexit:          xor     ax,ax           ; AH := 0, AL := 0
+                out     dx,ax           ; Recupera el registro Set/reset
+
+                inc     ax              ; AH := 0, AL := 1
+                out     dx,ax           ; Recupera el registro Activaci¢n de
+					; set/reset
+
+                mov     al,3            ; AH := 0, AL := 3
+                out     dx,ax           ; AL := n£mero del registro
+                                        ;       Rotar dato/seleccionar funci¢n
+
+                mov     ax,0FF08h       ; AH := 1111111b, AL := 8
+                out     dx,ax           ; Recupera el registro M scara de bit
+
+                pop     di              ; Recupera los registros y vuelve
+                pop     si
+                mov     sp,bp
+                pop     bp
+                ret
+
+_Line           ENDP
+
+_TEXT           ENDS
+
+                END

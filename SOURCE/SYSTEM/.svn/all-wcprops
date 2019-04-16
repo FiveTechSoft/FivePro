@@ -1,0 +1,167 @@
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/svn/!svn/ver/3/trunk/SOURCE/SYSTEM
+END
+BLOCKEVA.C
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/3/trunk/SOURCE/SYSTEM/BLOCKEVA.C
+END
+C_SYSTEM.C
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/3/trunk/SOURCE/SYSTEM/C_SYSTEM.C
+END
+DUAL.LNK
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/3/trunk/SOURCE/SYSTEM/DUAL.LNK
+END
+BLINKER.LNK
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/3/trunk/SOURCE/SYSTEM/BLINKER.LNK
+END
+SYSINT.C
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/3/trunk/SOURCE/SYSTEM/SYSINT.C
+END
+CLIPBOAR.C
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/3/trunk/SOURCE/SYSTEM/CLIPBOAR.C
+END
+OUTIN.C
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/3/trunk/SOURCE/SYSTEM/OUTIN.C
+END
+MEMEXT.C
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/3/trunk/SOURCE/SYSTEM/MEMEXT.C
+END
+DROMDATE.C
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/3/trunk/SOURCE/SYSTEM/DROMDATE.C
+END
+FUNCEXEC.C
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/3/trunk/SOURCE/SYSTEM/FUNCEXEC.C
+END
+MODEM.C
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/3/trunk/SOURCE/SYSTEM/MODEM.C
+END
+COMS.C
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/3/trunk/SOURCE/SYSTEM/COMS.C
+END
+CMOSMEMB.C
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/3/trunk/SOURCE/SYSTEM/CMOSMEMB.C
+END
+DOSVER.C
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/3/trunk/SOURCE/SYSTEM/DOSVER.C
+END
+SETEVENT.PRG
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/3/trunk/SOURCE/SYSTEM/SETEVENT.PRG
+END
+PEEKPOKE.C
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/3/trunk/SOURCE/SYSTEM/PEEKPOKE.C
+END
+EVENTS.C
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/3/trunk/SOURCE/SYSTEM/EVENTS.C
+END
+LEE.C
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/3/trunk/SOURCE/SYSTEM/LEE.C
+END
+CMOSMEME.C
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/3/trunk/SOURCE/SYSTEM/CMOSMEME.C
+END
+VIDEO.C
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/3/trunk/SOURCE/SYSTEM/VIDEO.C
+END
+FP.LNK
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/3/trunk/SOURCE/SYSTEM/FP.LNK
+END
+MEMORY.C
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/3/trunk/SOURCE/SYSTEM/MEMORY.C
+END
+ARG.C
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/3/trunk/SOURCE/SYSTEM/ARG.C
+END
+VOLSER.C
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/3/trunk/SOURCE/SYSTEM/VOLSER.C
+END
+COPRO.C
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/3/trunk/SOURCE/SYSTEM/COPRO.C
+END
+BIOSPTR.C
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/3/trunk/SOURCE/SYSTEM/BIOSPTR.C
+END
+TEST.PRG
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/3/trunk/SOURCE/SYSTEM/TEST.PRG
+END

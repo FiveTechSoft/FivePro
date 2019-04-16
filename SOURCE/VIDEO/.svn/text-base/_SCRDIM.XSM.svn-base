@@ -1,0 +1,41 @@
+ARGx EQU word ptr [bp+6]
+ARGy EQU word ptr [bp+8]
+
+CRT_MODE  EQU 49h
+CRT_COLS  EQU 4Ah
+CRT_LEN   EQU 4Ch
+ADDR_6845 EQU 63h
+ROWS      EQU 85h
+POINTS    EQU 85h
+
+_TEXT     SEGMENT BYTE public 'CODE'
+          ASSUME CS:_TEXT
+
+          PUBLIC _ScrDim
+_ScrDim   PROC far
+          push bp
+          mov bp, sp
+          mov ax, 40h
+          mov es, ax
+          mov bx, 9
+          mov ax, ARGx
+          div bl
+          mov es:[CRT_COLS],al
+          mov bh,al
+          mov ax,ARGy
+          div byte ptr es:[POINTS]
+          dec al
+          mov es:[ROWS],al
+          inc al
+          mul bh
+          mov es:[CRT_LEN],ax
+          mov ah,bh
+          shr ah,1
+          mov al,13h
+          mov dx,es:[ADDR_6845]
+          out dx,ax
+          pop bp
+          ret
+_ScrDim   endp
+_TEXT     ends
+          end

@@ -1,0 +1,14 @@
+PATH=C:\compilad\clipper5
+CLIPPER=$(PATH)\bin\clipper
+BLINKER=$(PATH)\bin\blinker
+
+.prg.obj:
+              $(CLIPPER) $< /n /i$(PATH)\include
+
+TestWnd.obj : TestWnd.prg
+
+Window.obj : Window.prg
+
+TestWnd.exe : TestWnd.obj Window.obj
+              $(BLINKER) fi TestWnd, Window, Shadow LIB Objects
+              TestWnd

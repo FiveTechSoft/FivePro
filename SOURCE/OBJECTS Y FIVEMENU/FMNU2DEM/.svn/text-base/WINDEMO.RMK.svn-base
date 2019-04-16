@@ -1,0 +1,6 @@
+windemo.exe:  windemo.obj tmenu.lib
+              blinker fi windemo lib tmenu
+              // rtlink fi windemo lib tmenu
+
+windemo.obj:  windemo.prg
+              clipper windemo /n

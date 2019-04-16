@@ -1,0 +1,35 @@
+!short: ^BFunciones OOPS contenidas en Objects.LIB^N
+!short:컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴�
+!short: ClassBrowser()     Hojeador de Clases en tiempo de ejecuci줻                
+
+   ClassBrowser()  --> nil
+
+   Permite revisar las Clases existentes en un momento de la ejecuci줻
+   del programa.
+
+!short: OInspect()         Inspector de Objetos Gen굍ico                            
+
+  OInspect( oObjeto [, nRow, nCol ] )   --> nil
+
+  Permite inspeccionar interactivamente la informaci줻 contenida en
+  los datos de un Objeto
+
+!short: lOWrite()          Salva un Objeto a disco                                  
+
+  lOWrite( cFileName, oObject )  --> lExito
+
+  Guarda una copia de un Objeto en disco, pudiendo restaurarlo posterior-
+  mente usando oORead().
+
+!short: oORead()           Restaura un Objeto desde disco                           
+
+  oORead( cFileName )  --> oObjeto
+
+  Restaura un Objeto salvado a disco previamente con lOWrite().
+
+!short: oOClone()          Duplica un Objeto                                        
+
+  oOClone( oObject )  --> oCopy
+
+  Realiza una copia exacta y total de un Objeto. Devuelve un nuevo Objeto
+  duplicado de el primero.

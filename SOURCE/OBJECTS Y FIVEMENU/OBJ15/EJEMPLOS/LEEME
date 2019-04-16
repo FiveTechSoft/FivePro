@@ -1,0 +1,6 @@
+Para probar los ejemplos haz lo siguiente con cada PRG,
+
+   CLIPPER <prg>  /n        --> <obj>
+
+   RTLINK FI <obj> LIB Objects, Clases
+

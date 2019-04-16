@@ -1,0 +1,14 @@
+PATH=C:\compilad\clipper5
+CLIPPER=$(PATH)\bin\clipper
+BLINKER=$(PATH)\bin\blinker
+
+.prg.obj:
+              $(CLIPPER) $< /n /i$(PATH)\include
+
+TestStck.obj : TestStck.prg
+
+Stack.obj    : Stack.prg
+
+TestStck.exe : TestStck.obj Stack.obj
+              $(BLINKER) fi TestStck, Stack LIB Objects
+              TestStck

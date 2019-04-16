@@ -1,0 +1,105 @@
+#include "FivePro.ch"
+
+oWnd DIALOG   0,  0,320,300
+CAPTION "FivePro 2.0 - IDE"
+BEGIN
+END
+
+oMenu MENU
+BEGIN
+   POPUP " &Bases de Datos "
+   BEGIN
+      MENUITEM " &Usar DBF...          ",     210
+      MENUITEM " &Crear DBF...         ",     220
+      MENUITEM " &Areas de Trabajo...  ",     230
+      MENUITEM SEPARATOR,     240
+      MENUITEM " &Usar Indice...       ",     250
+      MENUITEM " &Crear Indice...      ",     260
+      MENUITEM SEPARATOR,     270
+   POPUP " &Relaciones...        "
+   BEGIN
+      MENUITEM " &Revisar...           ",    2810
+      MENUITEM " &Establacer nueva...  ",    2820
+      MENUITEM " E&liminar...          ",    2830
+   END
+
+      MENUITEM " &Filtros...           ",     290
+      MENUITEM " &RDDs...              ",     300
+      MENUITEM SEPARATOR,     310
+      MENUITEM " &Terminar...  Alt-X   ",     320
+   END
+
+   POPUP " &Recursos "
+   BEGIN
+      MENUITEM " &Men£ Principal...     ",     310
+      MENUITEM " &Cajas de Di logo...   ",     320
+      MENUITEM SEPARATOR,     330
+      MENUITEM " &Controles...          ",     340
+      MENUITEM " C&olores...            ",     350
+      MENUITEM SEPARATOR,     360
+      MENUITEM " &Listados...           ",     370
+      MENUITEM " &Etiquetas...          ",     380
+      MENUITEM " &Mailings...           ",     390
+   END
+
+   POPUP " &Programa "
+   BEGIN
+      MENUITEM " &Editar Programa...         ",     410
+      MENUITEM " &Nuevo Programa...          ",     420
+      MENUITEM SEPARATOR,     430
+      MENUITEM " &Compilar...                ",     440
+      MENUITEM " &Enlazar...                 ",     450
+      MENUITEM " &Construir...               ",     460
+      MENUITEM " &Ejecutar...                ",     470
+      MENUITEM SEPARATOR,     480
+      MENUITEM " &Especificar Par metros...  ",     490
+   END
+
+   POPUP " Proy&ecto "
+   BEGIN
+      MENUITEM " &Usar Proyecto...       ",     510
+      MENUITEM " &Nuevo Proyecto...      ",     520
+      MENUITEM SEPARATOR,     530
+      MENUITEM " &A¤adir Elemento...     ",     540
+      MENUITEM " &Modificar Elemento...  ",     550
+      MENUITEM SEPARATOR,     560
+   POPUP " &Generar C¢digo...      "
+   BEGIN
+      MENUITEM " &Plantillas...     ",    5710
+      MENUITEM " &Nuevas Clases...  ",    5720
+      MENUITEM " &Data-Driven...    ",    5730
+   END
+
+   END
+
+   POPUP " &Opciones "
+   BEGIN
+      MENUITEM " &Configuraci¢n IDE...  ",     610
+      MENUITEM " &Directorios...        ",     620
+      MENUITEM SEPARATOR,     630
+      MENUITEM " &Personalizaci¢n...    ",     640
+      MENUITEM SEPARATOR,     650
+      MENUITEM " &Guardar opciones...   ",     660
+   END
+
+   POPUP " &Utilidades "
+   BEGIN
+      MENUITEM " &Block de Notas...  ",     710
+      MENUITEM " &Calculadora...     ",     720
+      MENUITEM " &Agenda...          ",     730
+      MENUITEM SEPARATOR,     740
+      MENUITEM " &Mosaico Ventanas   ",     750
+      MENUITEM " Ca&scada Ventanas   ",     760
+   END
+
+   POPUP " &Ayuda "
+   BEGIN
+      MENUITEM " &Indice...            ",     810
+      MENUITEM " &Buscar por...        ",     820
+      MENUITEM " &Ultima consulta...   ",     830
+      MENUITEM SEPARATOR,     840
+      MENUITEM " &Acerca de...         ",     850
+   END
+
+END
+

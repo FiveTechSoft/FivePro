@@ -1,0 +1,14 @@
+.c.obj:
+   bcc -c -ml $<
+   lib SVGA -+ $*;
+
+SVGA.obj    : SVGA.c
+pcxsvga.obj : pcxsvga.c
+
+TestSVGA.obj : TestSVGA.prg
+   clipper TestSVGA /n/w
+
+TestSVGA.exe : TestSVGA.obj SVGA.lib gt.obj
+   blinker fi TestSVGA, Gt, Gt_Ext, LabelLen lib SVGA, Clipper, extend, DbfNtx, Terminal
+   TestSVGA
+

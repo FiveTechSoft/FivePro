@@ -1,0 +1,245 @@
+!short: ^BDefiniciones^N                                                                
+
+ Es conveniente que conozcas los fundamentos te¢ricos del OOPS. Esto te
+ ayudar  a realizar un mejor an lisis de tus programas.
+
+ Tardar s un tiempo en empezar a pensar en 'OOPS'. No te preocupes si no lo
+ entiendes todo al principio. El OOPS supone un gran cambio en nuestra forma
+ de organizar los programas.
+
+ Los programadores que usamos OOPS a£n estamos aprendiendo y descubriendo
+ todas sus ventajas. Lo importante es que empieces ya a aprender todas estas
+ t‚cnicas.
+
+!short:ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+!short: Programaci¢n Orientada al Objeto                                            
+ ^BProgramaci¢n Orientada al Objeto
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ La Programaci¢n Orientada al Objeto no es realmente una tecnolog¡a 100 %
+ nueva.
+
+ De hecho muchos programadores la 'intu¡an' antes de la aparici¢n de los
+ lenguajes OOPS. Posiblemente tu hayas utilizado algunas caracter¡sticas del
+ OOPS en tus programas.
+
+ La verdadera novedad del OOPS es el reconocimiento y la implementaci¢n de
+ una serie de extensiones en los lenguajes de programaci¢n que facilitan el
+ que se utilicen estas t‚cnicas.
+
+ Una arquitectura OOPS est  basada en la utilizaci¢n de 'punteros'. Los
+ 'punteros' permiten implementar lo que se denomina 'late binding' ¢
+ resoluci¢n tard¡a. Esto quiere decir que el compilador no resuelve al
+ 100 % las llamadas a funciones que se realizar n durante el programa.
+ Por el contrario, un sistema OOPS 'resuelve' durante su ejecuci¢n a que
+ funciones debe llamar.
+
+ Por ejemplo, antes de la aparici¢n del C++, era posible utilizar
+ determinados preprocesadores que permit¡an implementar OOPS en puro
+ lenguaje C. Lo que hac¡an estas herramientas eran construir
+ autom ticamente una estructura un tanto complicada de 'punteros'.
+
+ La aparici¢n del C++ representa una consolidaci¢n y una estandarizaci¢n
+ de estas t‚cnicas. Los bloques de c¢digo de Clipper ofrecen una
+ funcionalidad muy similar a los punteros del lenguaje C. Gracias a ellos
+ y al fant stico preprocesador de Clipper 5, es posible realizar una
+ implementaci¢n OOPS en Clipper, antes de la aparici¢n de la versi¢n de
+ Clipper que ya ofrezca OOPS c¢mo una capacidad estandard.
+
+ Toda la tecnolog¡a OOPS gira en torno al concepto de Objeto y de Clase.
+ Podemos ir construyendo nuevas Clases que heredan caracter¡sticas de
+ otras que hayamos construido previamente. As¡ poco a poco vamos
+ desarrollando una 'jerarqu¡a de Clases' que aprovechan la funcionalidad
+ de sus Clases 'ascendentes'.
+
+ Es por esto que tambien se le denomina al OOPS 'Programaci¢n por
+ diferencias'. Cada Clase tiene aspectos comunes y diferencias de la
+ Clase ¢ Clases de las que deriva. Su similitud justifica la jerarquia y
+ sus diferencias su creaci¢n c¢mo nueva Clase.
+
+ El OOPS toma el modelo del mundo f¡sico que nos rodea. Todos sabemos
+ lo que es un 'objeto' cualquiera. Todos sabemos manejarlos desde nuestro
+ nacimiento.
+
+ Aprender a pensar en OOPS consiste tan solo en redescubrir nuestra
+ forma natural de interaccionar con el mundo que nos rodea. Algo tan
+ simple y sencillo.
+
+ Lo dificil del OOPS es ser capaces de cambiar nuestra forma de pensar
+ hac¡a un modelo natural y simple. Lo dificil es atrevernos a dejar de
+ pensar con nuestros habitos tradicionales de programaci¢n. Es por esto
+ que los programadores 'novatos' aprenden OOPS con toda facilidad. A
+ un programador experto le es mucho m s dificil pensar en OOPS.
+
+ Te sentir s tentado de creer que lo que se puede hacer con el OOPS t£
+ lo puedes hacer usando funciones. Esa es una de las 'tentaciones' de
+ abandono del OOPS, por la que todos hemos pasado al principio.
+
+ Piensa que el OOPS est  a un nivel superior que las funciones. Una
+ funci¢n realiza una acci¢n, una determinada tarea. Un Objeto es un
+ conjunto de Datos con capacidad para ejecutar multiples acciones.
+ Piensa en un Objeto c¢mo en un conjunto de variables y funciones. El
+ nivel de abstracci¢n es mayor que al usar s¢lo funciones.
+
+ Cuanto mayor sea la abstracci¢n que uses al programar tanto m s te
+ podr s concentrar en el objetivo de tu programa, lo que el programa
+ debe hacer, y no tanto en los detalles, en c¢mo debe hacerlo.
+
+ Un Objeto permite un nivel mucho mayor de abstracci¢n que al usar
+ funciones. Piensa en todo esto y date tiempo. Estoy seguro que dentro
+ de poco ser s un excelente programador en OOPS.
+
+!short: Definici¢n de Clase y de Objeto                                             
+
+ Un Objeto es un conjunto de datos que se comporta de unas maneras
+ caracter¡sticas. Estos datos y este comportamiento le vienen dictados
+ por la Clase a la que pertenece.
+
+ Piensa en cualquier Objeto del mundo real. Por ejemplo en un coche.
+ ¨ Que es lo que conoces t£ de un coche ? Sabes identificar sus
+ datos caracter¡sticos: tiene un color, una forma, 4 ruedas, puertas,
+ un volante, etc...
+
+ Ese conjunto de datos se comporta de determinadas maneras. El coche
+ 'arranca', se desplaza, corre, cambia de direcci¢n, etc... este
+ comportamiento es propio de la Clase 'coche' ya que a todos los
+ coches le suponemos un comportamiento igual. En nuestra mente se
+ realiza una abstracci¢n y podemos hablar de un 'coche gen‚rico'.
+ Hemos identificado naturalmente la Clase coche.
+
+ Una Clase es un conjunto de reglas que rige la creaci¢n y el
+ comportamiento de sus Objetos.
+
+ La Clase Coche indica que caracter¡sticas tendr  un coche y adem s
+ indica que tipo de comportamiento han de tener. Piensa en una Clase
+ c¢mo en un manual t‚cnico que indicase c¢mo se han de construir sus
+ Objetos y c¢mo deberan funcionar.
+
+ Las caracter¡sticas finales de un Objeto pueden variar de uno a otro.
+ As¡, los coches pueden tener formas distintas, colores distintos,
+ etc... pero todos se deben adecuar a unas reglas de construcci¢n.
+
+ El Objeto contiene los Datos y la Clase contiene los comportamientos.
+
+ Piensa ahora en una de las clases predefinidas que trae Clipper. Por
+ ejemplo, piensa en la Clase Get:
+
+ ¨ Que datos tiene un Objeto Get ? Su fila, columna, colores, variable
+ que edita, etc...
+
+ ¨ C¢mo se comporta un Objeto Get ? Debe hacer aparecer el cursor cuando
+ se active, debe permitirnos escribir, modificar  el valor de la
+ variable que contiene, puede realizar una validaci¢n, etc...
+
+ C¢mo ves podemos pensar igual que c¢mo lo hacemos respecto a un coche.
+ Estamos adoptando una forma natural de dise¤ar nuestros programas.
+ Gracias al OOPS construiremos Objetos que ser n piezas con las que
+ iremos construyendo nuestro programa. Piezas completas, inteligentes,
+ ya que 'saben' c¢mo han de comportarse.
+
+ A los distintos comportamientos de un Objeto se le denominan 'm‚todos'.
+ Para que un Objeto ejecute un m‚todo, hemos de enviarle un mensaje.
+
+ As¡, si quiero que un coche corra he de pisar el acelerador. Pisar el
+ acelerador es la forma de enviarle un mensaje. El activa el m‚todo
+ 'acelerar'.
+
+ Si quiero que el televisor se encienda, he de pulsar el bot¢n de
+ encendido. Pulsar ese bot¢n es la forma de decirle 'enci‚ndete'. El
+ televisor 'sabe' c¢mo ha de encenderse por s¡ solo.
+
+ En Clipper para enviar un mensaje utilizamos el operador ':'. As¡,
+ si yo tengo un Objeto ventana y quiero que se muestre tendr‚ que
+ enviarle un determinado mensaje:
+
+           ventana:Dibuja()
+
+ Al recibir el mensaje 'Dibuja' el Objeto activa un determinado m‚todo
+ que hace que se dibuje la ventana.
+
+ Tambien se utiliza el mismo operador para manipular un dato del Objeto.
+ As¡ si yo quiero modificar el titulo de una ventana, puedo hacer lo
+ siguiente:
+
+           ventana:cTitulo = "Nuevo t¡tulo"
+
+F¡jate que la diferencia entre activar un m‚todo y manipular un Dato radica
+en el indicar par‚ntesis al final del mensaje. Al enviarle un mensaje
+para que realice un determinado m‚todo podemos pasarle una serie de
+par metros que ir n entre par‚ntesis:
+
+         ventana:Mueve( 10, 12 )
+
+!short: Las tres caracter¡sticas de un sistema OOPS                                 
+
+ Para que un lenguaje se denomine Orientado al Objeto debe cumplir las
+ tres siguientes caracter¡sticas: Encapsulaci¢n, Polimorfismo y
+ Herencia.
+
+ Encapsulaci¢n: Los Datos y el comportamiento de un Objeto se constituyen
+ c¢mo una unidad inseparable. Es absurdo pensar en separar lo que un
+ coche tiene de lo que un coche hace. En OOPS datos y comportamientos son
+ una unidad.
+
+ Polimorfismo: El mismo mensaje enviado a Objetos de Clases distintas
+ pondr  en funcionamiento distintos m‚todos. As¡, no lo es mismo darle
+ una patada al acelerador de un coche ¢ a un bal¢n. El mensaje es el
+ mismo pero se activan distintos m‚todos por ser Objetos de Clases
+ distintas,
+
+                ventana:Dibuja()
+
+                menu:Dibuja()
+
+ Identicos mensajes pero que activar n distintos m‚todos.
+
+ Herencia: En un sistema OOPS es posible crear nuevas Clases a partir
+ de otras ya creadas, y estas nuevas Clases heredan las caracter¡sticas
+ de sus Clases 'ascendentes', puediendo aportar nuevas caracter¡sticas
+ y/o modificando determinados comportamientos.
+
+ Por ejemplo, un fabricante de coches puede crear un nuevo modelo similar
+ a uno ya creado pero que tenga un motor m s potente y unas nuevas
+ caracter¡sticas de lujo. Se esta heredando una nueva Clase a partir de
+ otra ya creada. No es necesario crear la nueva Clase desde cero, ya que
+ hemos utilizando c¢mo clase base otra Clase ya creada.
+
+ Se entiende por herencia m£ltiple cuando a aprtir de m s de una Clase,
+ derivamos y creamos otra nueva. La Clase derivada contendr  las
+ caracter¡sticas de todas sus Clases ascendentes.
+
+ Por ejemplo, supongamos la Clase Coche y supongamos la Clase Casa. A
+ partir de esas dos Clases podemos crear la Clase Coche-Caravana. Un
+ coche caravana tiene las propiedades y el comportamiento de un Coche
+ y de una Casa.
+
+ En determinadas situaciones podemos querer crear una Clase que herede
+ de otras. No es recomendable que nada m s empezar OOPS comiences a
+ dise¤ar herencias m£ltiples. Practica primero con herencia simple y
+ poco a poce estar s adistrado para plantearte alguna que otra herencia
+ m£ltiple.
+
+!short: Jerarqu¡as de Clases                                                        
+
+ Gracias a la herencia del OOPS, es posible ir construyendo nuevas Clases
+ a partir de otras que previamente hayamos construido.
+
+ Esto nos permite hablar de jerarqu¡as de Clases. As¡ denominamos Clase
+ Base ¢ Ascendente aquella a partir de la cual derivemos otras nuevas.
+ Las nuevas Clases se denominan Clases derivadas, hijas ¢ descendentes.
+
+ Una Clase derivada aprovecha toda la funcionalidad de su Clase Ascendente,
+ y aporta nueva funcionalidad ¢ modifica la funcionalidad de su Clase
+ Ascendente en parte.
+
+ Los Objetos de las Clases derivadas mantienen los Datos de sus Clases
+ Ascendentes pudiendo adem s aportar nuevos Datos.
+
+
+           Clase TMenu                      Clase Padre
+             ³
+             ÃÄÄÄ Clase TMenuBar            Clase derivada
+             ³
+             ÀÄÄÄ Clase TMenuBox            Clase derivada
+
+

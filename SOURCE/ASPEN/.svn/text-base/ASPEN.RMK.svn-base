@@ -1,0 +1,22 @@
+
+test.obj : Test.cpp
+   bcc -c -ml -Ic:\clipper5\include Test
+
+.cpp.obj:
+   bcc -c -ml -Ic:\clipper5\include $<
+   Tlib Aspen -+ $*,,
+   del main.exe
+
+main.obj : main.prg
+   clipper main /n
+
+item.obj  : item.cpp
+param.obj : param.cpp
+array.obj : array.cpp
+block.obj : block.cpp
+file.obj  : file.cpp
+
+main.exe : main.obj
+   blinker fi main lib Aspen
+   main
+

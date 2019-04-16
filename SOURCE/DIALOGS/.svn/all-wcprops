@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/svn/!svn/ver/3/trunk/SOURCE/DIALOGS
+END
+MSGEND.PRG
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/3/trunk/SOURCE/DIALOGS/MSGEND.PRG
+END
+MSGALERT.PRG
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/3/trunk/SOURCE/DIALOGS/MSGALERT.PRG
+END
+MSGBOX.PRG
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/3/trunk/SOURCE/DIALOGS/MSGBOX.PRG
+END
+COLORS.BIN
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/3/trunk/SOURCE/DIALOGS/COLORS.BIN
+END
+THEDRAW.PCK
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/3/trunk/SOURCE/DIALOGS/THEDRAW.PCK
+END
+MSGEMPTY.PRG
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/3/trunk/SOURCE/DIALOGS/MSGEMPTY.PRG
+END
+MSG.PRG
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/3/trunk/SOURCE/DIALOGS/MSG.PRG
+END
+MSGGET.PRG
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/3/trunk/SOURCE/DIALOGS/MSGGET.PRG
+END
+MSGPALET.PRG
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/3/trunk/SOURCE/DIALOGS/MSGPALET.PRG
+END

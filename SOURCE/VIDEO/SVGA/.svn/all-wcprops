@@ -1,0 +1,137 @@
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/3/trunk/SOURCE/VIDEO/SVGA
+END
+PCXSVGA.C
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/3/trunk/SOURCE/VIDEO/SVGA/PCXSVGA.C
+END
+SETPLANE.C
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/3/trunk/SOURCE/VIDEO/SVGA/SETPLANE.C
+END
+MKSTICKS.BAT
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/3/trunk/SOURCE/VIDEO/SVGA/MKSTICKS.BAT
+END
+RDPOINT.ASM
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/3/trunk/SOURCE/VIDEO/SVGA/RDPOINT.ASM
+END
+MODE13X.ASM
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/3/trunk/SOURCE/VIDEO/SVGA/MODE13X.ASM
+END
+XPOINT.ASM
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/3/trunk/SOURCE/VIDEO/SVGA/XPOINT.ASM
+END
+SVGA.LIB
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/3/trunk/SOURCE/VIDEO/SVGA/SVGA.LIB
+END
+LINE.ASM
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/3/trunk/SOURCE/VIDEO/SVGA/LINE.ASM
+END
+MKEXAMP.BAT
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/3/trunk/SOURCE/VIDEO/SVGA/MKEXAMP.BAT
+END
+POINT.ASM
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/3/trunk/SOURCE/VIDEO/SVGA/POINT.ASM
+END
+EXAMPLE.C
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/3/trunk/SOURCE/VIDEO/SVGA/EXAMPLE.C
+END
+BANKS.ASM
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/3/trunk/SOURCE/VIDEO/SVGA/BANKS.ASM
+END
+STICKS.C
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/3/trunk/SOURCE/VIDEO/SVGA/STICKS.C
+END
+SVGA.C
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/3/trunk/SOURCE/VIDEO/SVGA/SVGA.C
+END
+SETTEXT.C
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/3/trunk/SOURCE/VIDEO/SVGA/SETTEXT.C
+END
+SVGAMODE.ASM
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/3/trunk/SOURCE/VIDEO/SVGA/SVGAMODE.ASM
+END
+SCRSAY.C
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/3/trunk/SOURCE/VIDEO/SVGA/SCRSAY.C
+END
+SVGA.H
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/3/trunk/SOURCE/VIDEO/SVGA/SVGA.H
+END
+MODEL.H
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/3/trunk/SOURCE/VIDEO/SVGA/MODEL.H
+END
+TESTSVGA.PRG
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/3/trunk/SOURCE/VIDEO/SVGA/TESTSVGA.PRG
+END
+SVGA.RMK
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/3/trunk/SOURCE/VIDEO/SVGA/SVGA.RMK
+END
+VGAKIT.DOC
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/3/trunk/SOURCE/VIDEO/SVGA/VGAKIT.DOC
+END

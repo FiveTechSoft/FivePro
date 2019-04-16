@@ -1,0 +1,30 @@
+ ^BIntroducci¢n
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ Bienvenido a la Programaci¢n Orientada al Objeto. Supongo que eres un
+ programador que usa Clipper 5, que has tenido ocasi¢n de utilizar las
+ Clases predefinidas que trae Clipper 5, y habr s leido por alguna parte
+ las grandes ventajas de la Programaci¢n Orientado al Objeto (en adelante
+ usare OOPS c¢mo abreviatura de Sistema de Programaci¢n Orientada al Objeto).
+
+ Estar s extra¤ado de que pese a todas las ventajas que te han comentado
+ de este sistema, Clipper 5 no ofrezca plena capacidad OOPS: es decir, no
+ podemos crear nuevas Clases...
+
+ Bueno, eso mismo es lo que pensamos todos. Pero mientras aguardamos a una
+ nueva versi¢n de Clipper, podemos ir usando Objects. Esta librer¡a supera
+ esas limitaciones de Clipper. Objects es una librer¡a que enlazar s c¢mo
+ habitualmente haces con Clipper.lib y Extend.lib, y automaticamente tendr s
+ toda la potencia OOPS desde Clipper.
+
+ Esta librer¡a te ofrece todo el c¢digo fuente, por lo que podr s estudiar
+ c¢mo ha sido dise¤ada, podr s mejorarla ¢ adaptarla a tu gusto. Te
+ preguntar s que c¢mo lo he conseguido. El merito realmente es de Clipper.
+ Clipper internamente ya est  preparado para usar OOPS, pero no sabemos
+ exactamente porque a£n no han decidido ofrecernos esa capacidad.
+
+ Muchos programadores hemos investigado esas capacidades de Clipper y hemos
+ conseguido ponerlas a nuestra disposici¢n. Ahora tu puedes tambien disponer
+ en tus programas de la extraordinaria potencia que te ofrece el OOPS.
+
+

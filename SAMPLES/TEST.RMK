@@ -1,0 +1,9 @@
+.prg.obj:
+   clipper $< /n/w
+
+Test.obj : Test.prg Dialog.ch
+
+Test.exe : Test.obj Dialog.lib c:\objects.20\Objects.lib Dialog.lnk Dialog.ch
+   c:\blinker\blinker fi Test @Dialog.lnk
+   Test.exe
+

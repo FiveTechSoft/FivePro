@@ -1,0 +1,6 @@
+bcdemo.exe:   bcdemo.obj tmenu.lib
+              blinker fi bcdemo lib tmenu
+              // rtlink fi bcdemo lib tmenu
+
+bcdemo.obj:   bcdemo.prg
+              clipper bcdemo /n

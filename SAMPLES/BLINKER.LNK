@@ -1,0 +1,4 @@
+// BLINKER EXECUTABLE DUAL
+search c:\blinker\BlxClp52
+lib c:\Objects.20\Objects
+lib c:\clipper5\lib\Clipper, c:\clipper5\lib\Extend, c:\clipper5\lib\Terminal, c:\clipper5\lib\DbfNtx, ..\lib\FivePro2

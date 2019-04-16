@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/!svn/ver/3/trunk/SOURCE/KEYBOARD
+END
+KEYSHIFT.C
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/3/trunk/SOURCE/KEYBOARD/KEYSHIFT.C
+END
+KEYBUFFE.PRG
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/3/trunk/SOURCE/KEYBOARD/KEYBUFFE.PRG
+END
+KEYCHECK.C
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/3/trunk/SOURCE/KEYBOARD/KEYCHECK.C
+END
+KEYALT.C
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/3/trunk/SOURCE/KEYBOARD/KEYALT.C
+END
+KEYWAIT.C
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/3/trunk/SOURCE/KEYBOARD/KEYWAIT.C
+END
+KEYCTRL.C
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/3/trunk/SOURCE/KEYBOARD/KEYCTRL.C
+END
+KEYLSHIF.C
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/3/trunk/SOURCE/KEYBOARD/KEYLSHIF.C
+END
+ALT2CHR.C
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/3/trunk/SOURCE/KEYBOARD/ALT2CHR.C
+END
+KEYSTUFF.C
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/3/trunk/SOURCE/KEYBOARD/KEYSTUFF.C
+END
+KEYPLUS.PRG
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/3/trunk/SOURCE/KEYBOARD/KEYPLUS.PRG
+END

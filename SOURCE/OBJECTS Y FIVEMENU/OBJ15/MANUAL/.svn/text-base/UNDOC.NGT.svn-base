@@ -1,0 +1,409 @@
+!short: ^BFunciones indocumentadas OOPS contenidas en Clipper.LIB^N                     
+ ^BFunciones indocumentadas OOPS contenidas en Clipper.LIB^N
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ Con anterioridad a la aparici¢n de Clipper 5, Nantucket hab¡a anunciado que
+ Clipper iba a ofrecer las caracter¡sticas de un lenguaje de Programaci¢n
+ Orientado al Objeto.
+
+ Es por esto que todos nos llevamos un gran chasco al comprobar que Clipper
+ s¢lo ofrec¡a cuatro Clases predefinidas: Error, Get, TbColumn y TBrowse. Por
+ todas partes o¡amos hablar de las excelencias del OOPS y de las maravillas
+ que se estaban haciendo con C++, y nosotros... ­atados de pies y manos!
+
+ Sin embargo, muchos programadores no nos dimos por vencidos. Si Clipper
+ usaba cuatro Clases, lo m s probable era que la 'maquinaria' de creaci¢n y
+ manipulaci¢n de Clases estuviese ya dentro de sus librer¡as. Y as¡ fu‚ c¢mo
+ dimos con el m¢dulo SEND.
+
+ Usando el LIB de MicroSoft ¢ el TLib de Borland podemos inspeccionar el
+ contenido de las librer¡as de Clipper:
+
+ C:\> LIB CLIPPER.LIB
+
+ Microsoft (R) Library Manager Version 3.10
+ Copyright (C) Microsoft Corp 1983-1988. All rights reserved.
+
+ Operations:
+ List file: CLIPPER.LST
+
+ O bien,
+
+ C:\> TLIB CLIPPER.LIB /E, CLIPPER.LST
+
+ Utilizando cualquiera de estas dos alternativas podremos obtener un listado
+ con los m¢dulos contenidos dentro de la librer¡a CLIPPER.LIB. Utilizando
+ ahora nuestro editor de textos habitual podemos buscar dentro de CLIPPER.LST
+ la palabra SEND, y encontraremos:
+
+ 50/SEND       size: 2876
+
+    __CLASSADD                  __CLASSINS
+    __CLASSNAM                  __CLASSNEW
+    __CLASSSEL                  __isendp
+    __mdAdd                     __mdAssociate
+    __mdCreate
+
+
+ ­Estan ah¡! Los nombres son reveladores. Ahora  s¢lo faltaba realizar unas
+ 'pacientes' sesiones de 'hacking' para dar con la sintaxis apropiada. El
+ programador americano Peter Freese fu‚ el primero en publicar la sintaxis de
+ algunas de esas funciones.
+
+ Los nombres de las funciones que estan en may£sculas son las funciones que
+ podemos utilizar desde Clipper.
+
+ Las funciones contenidas dentro del m¢dulo SEND de Clipper.lib ofrecen un
+ sistema b sico de creaci¢n de Clases y de manipulaci¢n de Objetos. Antes de
+ entrar en el detalle de la sintaxis de cada una de ellas, vamos a ver cual
+ es el planteamiento realizado por Nantucket:
+
+ 1. Las Clases en Clipper se crean dinamicamente, esto es, en tiempo de
+ ejecuci¢n. La primera vez que vayamos a crear un Objeto en nuestro programa,
+ Clipper comprueba si la Clase correspondiente est  ¢ no est  creada y en
+ caso de no estarlo, la construye dinamicamente. Esta es la raz¢n por la que
+ el tiempo de reacci¢n al usar por primera vez un Objeto es algo superior a
+ las restantes veces en que creemos un Objeto de esa Clase.
+
+ 2. Clipper asigna un n£mero ('handle') a cada Clase que creemos. Clipper va
+ asignando estos n£meros en el orden en que se vayan creando las Clases, y
+ este orden depende de los Objetos que estemos usando en un momento
+ determinado, puesto que para crear cada Objeto habr  sido preciso crear
+ antes su Clase correspondiente.
+
+ Ejemplo: Si el primer Objeto que usamos en nuestro programa es un Objeto
+ GET, entonces Clipper asigna el 'handle' 1 a la Clase GET,
+
+         local oGet := GetNew()
+
+         ? oGet:ClassH()                // Devuelve 1
+
+ Ahora en el siguiente ejemplo, los 'handles' ser n distintos:
+
+         local oCol := TbColumnNew()
+         local oGet := GetNew()
+
+         ? oCol:ClassH()                // Devuelve 1
+         ? oGet:ClassH()                // Devuelve 2
+
+ En este caso la Clase TBCOLUMN ha recibido el 'handle' 1 y la Clase GET
+ el 'handle' 2.
+
+ 3. Para poder crear una nueva Clase hemos de solicitarle a Clipper un
+ nuevo 'handle', esto lo conseguimos utilizando la funci¢n __ClassNew():
+
+      local hClass := __ClassNew( "TEST", 4 )
+
+ M s adelante revisaremos en detalle la sintaxis de esta funci¢n.
+
+ 4. Una vez que tengamos el 'handle' hemos de indicarle a Clipper que Datos
+ y que M‚todos tendr n los Objetos de esta nueva Clase. Esto lo conseguimos
+ utilizando la funci¢n __ClassAdd().
+
+ 5. Por £ltimo, y una vez que hayamos creado completamente nuestra nueva
+ Clase, estaremos en condiciones de crear un Objeto de esta Clase. Para tal
+ fin utilizaremos la funci¢n __ClassIns().
+
+ Todas estas funciones son b sicas y no permiten, a priori, crear todo un
+ sistema OOPS. Sin embargo vamos a ver que con un poco de imaginaci¢n y algo
+ de programaci¢n podemos superar las limitaciones que presenta y desarrollar
+ toda una arquitectura OOPS.
+
+ Considero importante que conozcas la sintaxis de todas estas funciones
+ indocumentadas para que as¡ tengas un completo conocimiento de Clipper.
+ Puedes utilizarlas para experimentar y para desarrollar, quiz , sistemas
+ alternativos a Objects. Pero si decides usar Objects, entonces deber s
+ crear todas tus nuevas Clases usando Objects, ya que de no hacerlo as¡,
+ Objects podr¡a no funcionar correctamente (Objects controla las Clases que
+ va creando y de intentar utilizar una Clase que no hubiese construido ‚l,
+ podr¡an presentarse algunos problemas).
+
+!short:ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+!short: __ClassNew()    Crea una nueva Clase                                        
+ ^B__ClassNew()^N  Crea una nueva Clase
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ ^BSintaxis
+    __ClassNew( cNombreClase, nN£meroDeDatos )  --> nHandle
+
+ ^BPar metros
+    <cNombreClase>    Es una cadena que especifica el nombre de la nueva
+                      Clase a crear. No debe exceder de 10 caracteres.
+
+    <nNumeroDeDatos>  Es un valor num‚rico que especifica cuantos Datos
+                      tendr  un Objeto de esta Clase. Ha de ser mayor que 0.
+ ^BDevuelve
+    nHandle           Es un n£mero que identifica a la nueva Clase creada.
+
+ ^BEjemplo
+    local nClassHandle := __ClassNew( "TEST", 10 )
+!seealso: "__ClassAdd()" "__ClassIns()" "__ClassSel()" "__ClassNam()"
+!short: __ClassAdd()    A¤ade Datos y M‚todos a una Clase                           
+ ^B__ClassAdd()^N   A¤ade Datos y M‚todos a una Clase
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ-ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+                                                                                
+ ^BSintaxis
+    __ClassAdd( <nHandleClase>, <cDato/cM‚todo>, <cUDF> )  --> nil
+                                                                                
+ ^BPar metros
+   <nHandleClase>   Es un n£mero que habremos obtenido usando __ClassNew().
+                                                                                
+   <cDato/cM‚todo>  Es una cadena que indica el nombre del Dato ¢ M‚todo que
+                    vayamos a definir.
+                                                                                
+   <cUDF>           Es una cadena que indica el nombre de la UDF (User
+                    Defined Function = funci¢n definida por el usuario) que
+                    ser  llamada al acceder a dicho dato (Set/Get = para
+                    establecer ¢ para tomar su valor), ¢ al llamar a dicho
+                    M‚todo.
+                                                                                
+ Es preciso definir dos UDFs para acceder a los Datos de los Objetos de una
+ Clase, esto es as¡ por los dos tipos de acciones que se pueden realizar con
+ un Dato:
+                                                                                
+ Set: Establecer el valor de un Dato. El nombre de la UDF correspondiente ha
+ de comenzar con un subrayado (underscore) '_'.
+
+ Get: Preguntar por el valor de un Dato.
+                                                                                
+ ^BDevuelve
+    nada
+
+ ^BEjemplo
+     local nClassHandle := __ClassNew( "TVentana", 10 )
+                                                                                
+     __ClassAdd( nClassHandle, "nRow", "_WndRow" )     // Set para un Dato
+     __ClassAdd( nClassHandle, "nRow", "WndRow" )      // Get para un Dato
+                                                                                
+     __ClassAdd( nClassHandle, "Display", "WndDisplay" ) // M‚todo
+                                                                                
+ ^BImportante:^N Puesto que Clipper a£n continua manteniendo en diez caracteres
+ significativos el nombre de los s¡mbolos que utiliza, y c¢mo adem s hemos
+ de especificar un subrayado para distinguir la asignaci¢n ¢ la petici¢n
+ (Set/Get) de un Dato, puede ocurrir un error de dificil localizaci¢n:
+                                                                                
+ __ClassAdd( nHandle, "Dato1", "_VentanaDat1" )  // Set
+ __ClassAdd( nHandle, "Dato1", "VentanaDat1" )   // Get
+ __ClassAdd( nHandle, "Dato2", "_VentanaDat2" )  // Set
+ __ClassAdd( nHandle, "Dato2", "VentanaDat2" )   // Get
+                                                                                
+ C¢mo _VentanaDat1 y _VentanaDat2 exceden de 10 caracteres, Clipper los
+ trunca a diez: _VentanaDa, por lo que oTest:Dato1 := 4 y oTest:Dato2 := 6
+ ­ est n manipulando el mismo Dato y no datos distintos !.
+!seealso: "__ClassNew()" "__ClassIns()" "__ClassSel()" "__ClassNam()"
+                                                                                
+!short: __ClassIns()    Crea un Objeto de una Clase determinada                     
+ ^B__ClassIns()^N   Crea un Objeto de una Clase determinada
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+                                                                                
+ ^BSintaxis
+    __ClassIns( <nHandleClase> )  --> Objeto
+                                                                                
+ ^BPar metros
+    <nHandleClase>     Es un valor num‚rico que indica el 'handle' de acceso
+                       a una determinada Clase. Dicho 'handle' lo obtendremos
+                       previamente usando la funci¢n __ClassNew().
+ ^BDevuelve
+    Un Objeto correspondiente a la Clase indicada por nHandleClase.
+                                                                                
+ ^BEjemplos
+    local nWndHandle := __ClassNew( "TWINDOW", 4 )
+    local oWindow
+
+    // Definimos los Datos y los M‚todos de la Clase
+    // usando __ClassAdd()
+
+    oWindow = __ClassIns( nWndHandle )
+!seealso: "__ClassNew()" "__ClassAdd()" "__ClassSel()" "__ClassNam()"
+
+!short: __ClassSel()    Devuelve un array con los nombres de Datos y M‚todos        
+ ^B__ClassSel()^N   Devuelve un array con los nombres de Datos y M‚todos
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+                                                                                
+ ^BSintaxis
+    __ClassSel( <nHandleClase> )  --> acDatosM‚todos
+                                                                                
+ ^BPar metros
+    <nHandleClase>    Es un valor num‚rico que indica el 'handle' de acceso
+                      a una determinada Clase. Dicho 'handle' lo obtendremos
+                      previamente usando la funci¢n __ClassNew().
+ ^BDevuelve
+    acDatosM‚todos    Es un array de cadenas que contiene todos los nombres
+                      de los Datos y los M‚todos de la Clase indicada por
+                      nHandleClase.
+ ^BEjemplos
+    local oGet := GetNew()                    // Creamos un Objeto Get
+    local acDatosMetodos := __ClassSel( 1 )
+                                                                                
+    AChoice( 10, 10, 20, 40, acDatosMetodos )
+                                                                                
+    Ahora con un Objeto nuestro:
+                                                                                
+    local nWndHandle := __ClassNew( "TWINDOW", 4 )
+                                                                                
+    __ClassAdd( nWndHandle, "nTop", "nWndTop" )
+    __ClassAdd( nWndHandle, "nLeft", "nWndLeft" )
+                                                                                
+    AChoice( 10, 10, 20, 40, __ClassSel( nWndHandle ) )
+!seealso: "__ClassNew()" "__ClassAdd()" "__ClassIns()" "__ClassNam()"
+
+!short: __ClassNam()    Devuelve el nombre de una Clase                             
+ ^B__ClassNam()^N    Devuelve el nombre de una Clase
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ ^BSintaxis
+    __ClassNam( <nHandleClase> )  --> cNombreClase
+                                                                                
+ ^BPar metros
+    <nHandleClase>    Es un valor num‚rico que indica el 'handle' de acceso
+                      a una determinada Clase. Dicho 'handle' lo habremos
+                      obtenido previamente usando la funci¢n __ClassNew(), ¢
+                      utilizando el m‚todo indocumentado ClassH(). Consulta
+                      ClassH() y ClassName() en este manual.
+ ^BDevuelve
+    cNombreClase      Es una cadena que indica el nombre de la Clase cuyo
+                      'handle' hemos indicado con <nHandleClase>. El nombre
+                      de esa Clase se define con la funci¢n __ClassNew( ... ).
+ ^BEjemplo
+    local oGet := GetNew()
+                                                                                
+    ? __ClassNam( 1 )      // usamos 1 si la Clase Get es la primera que se
+                           // ha creado
+    ? __ClassNam( oGet:ClassH() )  // usando el m‚todo indocumentado ClassH()
+!seealso: "__ClassNew()" "__ClassAdd()" "__ClassIns()" "__ClassSel()"
+                                                                                
+!short:      QSelf()    Devuelve una referencia al Objeto desde dentro de un m‚todo 
+ ^BQSelf()^N  Devuelve una referencia al Objeto desde dentro de un M‚todo
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+                                                                                
+ ^BSintaxis
+    QSelf()  --> Objeto
+                                                                                
+ ^BDevuelve
+    Objeto       Es el cual sobre el que actua el M‚todo desde donde se est‚
+                 llamando a QSelf().
+                                                                                
+    Es importante observar que los Datos de los Objetos de Clipper est n
+    contenidos en un array, por lo que es posible acceder a ellos c¢mo si se
+    tratasen de los elementos de un Array.
+                                                                                
+ ^BEjemplo
+    local nWndHandle := __ClassNew( "TWINDOW", 4 )
+    local oWindow
+                                                                                
+    __ClassAdd( nWndHandle, "nTop", "_WndTop" )  // Set
+    __ClassAdd( nWndHandle, "nTop", "nWndTop" )  // Get
+    __ClassAdd( nWndHandle, "nTop", "nWndTop" )  // Get
+                                                                                
+    oWindow = __ClassIns( nWndHandle )
+    oWindow:nTop = 5                             // Se accede a _WndTop()
+    ? oWindow:nTop                               // Se accede a nWndTop()
+                                                                                
+    return
+                                                                                
+                                                                                
+    function _WndTop( nTopValue )
+       local Self := QSelf()
+       Self[ 1 ] = nTopValue
+    return
+                                                                                
+    function nWndTop()
+      local Self := QSelf()
+    return Self[ 1 ]
+                                                                                
+!short:
+!short:
+!short: ^BM‚todos Indocumentados^N                                                      
+ ^BM‚todos Indocumentados^N
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ Al igual que hemos encontrado las funciones contenidas dentro del m¢dulo
+ SEND dentro de la librer¡a CLIPPER.LIB, tambien se fueron detectando una
+ serie de m‚todos y mensajes indocumentados. Anton Van Straaten (Classy) fu‚
+ el primero en advertir su existencia. Ve moslos.
+
+!short:ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+!short: :ClassH()       Devuelve el 'handle' de una Clase                           
+ ^B:ClassH()^N       Devuelve el 'handle' de una Clase
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ ^BSintaxis
+    Objeto:ClassH()  --> nHandleClase
+                                                                                
+ ^BPar metros
+    Ninguno.
+                                                                                
+ ^BDevuelve
+    nHandleClase es un valor num‚rico correspondiente al 'handle' que Clipper
+    le ha asignado a la Clase a la que pertenece el Objeto.
+                                                                                
+ ^BEjemplo
+    local oGet := GetNew()
+                                                                                
+    ? oGet:ClassH()         // devuelve el handle
+                            // asignado a la Clase GET
+!seealso: ":ClassName()" ":Eval()"
+
+!short: :ClassName()    Devuelve el nombre de una Clase                             
+ ^B:ClassName()^N    Devuelve el nombre de una Clase
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+                                                                                
+ ^BSintaxis
+    Objeto:ClassName()  --> cNombreClase
+                                                                                
+ ^BPar metros
+    Ninguno
+                                                                                
+ ^BDevuelve
+    cNombreClase es el nombre de la Clase a la que pertenece el Objeto al que
+    enviamos el mensaje :ClassName().
+                                                                                
+ Este m‚todo es particularmente importante ya que va a ser el reemplazo de la
+ funci¢n ValType(). Utilizando la funci¢n ValType() podemos conocer el tipo de
+ variable que estemos utilizando, sin embargo si aplicamos la funci¢n
+ ValType() a un Objeto, sabremos que se trata de un Objeto porque devuelve
+ "O", sin embargo no sabremos que tipo de Objeto es.
+                                                                                
+ :ClassName() nos permite conocer que tipo de Objeto es el que estemos
+ utilizando, su misi¢n es pu‚s, complementar la informaci¢n proporcionada por
+ ValType(). Curiosamente, este m‚todo funciona tambien con las variables de
+ Clipper. As¡, podemos escribir:
+
+ local n := 5
+                                                                                
+ ? n:ClassName()    // Devuelve "NUMERIC"
+                                                                                
+ Este es un planteamiento muy coherente por parte de Clipper, que indica el
+ inter‚s de Nantucket en adoptar el paradigma del OOPS con todas sus
+ consecuencias.
+                                                                                
+ ^BEjemplo
+    local oGet := GetNew()
+                                                                                
+    ? oGet:ClassName()            // Devuelve "GET"
+!seealso: ":ClassH()" ":Eval()"
+
+!short: :Eval()         Eval£a un Bloque de C¢digo                                  
+ ^B:Eval()^N         Eval£a un Bloque de C¢digo
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ ^BSintaxis
+    bCodeBlock:Eval( [<parms,...>] )  --> u
+                                                                                
+ ^BPar metros
+    Los mismos que usar¡amos al llamar a la funci¢n Eval() al ejecutar un
+    Bloque de C¢digo con la excepci¢n de que ya no es necesario pasar c¢mo
+    primer par metro el Bloque de C¢digo a ejecutar, ya que es sobre ‚l sobre
+    el que actua el mensaje :Eval().
+                                                                                
+ ^BDevuelve
+    u Es un valor indeterminado que depende del Bloque de C¢digo que hayamos
+      construido.
+                                                                                
+ ^BEjemplo
+    local bBlock := { || "Hola" }
+                                                                                
+    ? bBlock:Eval()                    // Devuelve "Hola"
+                                                                                
+ Este m‚todo s¢lo es aplicable a Bloques de C¢digo (CodeBlocks).
+!seealso: ":ClassH()" ":ClassName()"

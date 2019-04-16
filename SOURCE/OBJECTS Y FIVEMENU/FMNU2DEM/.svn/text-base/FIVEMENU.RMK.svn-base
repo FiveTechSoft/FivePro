@@ -1,0 +1,6 @@
+fivemenu.exe: fivemenu.obj tmenu.lib
+              blinker fi fivemenu lib tmenu
+              // rtlink fi fivemenu lib tmenu
+
+fivemenu.obj: fivemenu.prg
+              clipper fivemenu /n

@@ -1,0 +1,10 @@
+Text.obj : Text.c
+   c:\compilad\borlandc\bin\bcc -c -ml -Ic:\FivePro.20\include Text.c
+   lib Text -+ Text.obj,,
+
+test.exe : test.obj Text.obj
+   c:\compilad\clipper5\bin\blinker fi test lib Text+d:clipper+d:extend+d:terminal+d:dbfntx
+   Test
+
+test.obj : test.prg
+   c:\compilad\clipper5\bin\clipper test /n

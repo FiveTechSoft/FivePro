@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/svn/!svn/ver/3/trunk/SOURCE/MOUSE
+END
+MKEYWAIT.PRG
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/3/trunk/SOURCE/MOUSE/MKEYWAIT.PRG
+END
+MTEXT.C
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/3/trunk/SOURCE/MOUSE/MTEXT.C
+END
+TEST.PRG
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/3/trunk/SOURCE/MOUSE/TEST.PRG
+END
+BLINKER.LNK
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/3/trunk/SOURCE/MOUSE/BLINKER.LNK
+END
+MOUSE.C
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/3/trunk/SOURCE/MOUSE/MOUSE.C
+END

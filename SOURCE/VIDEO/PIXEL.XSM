@@ -1,0 +1,100 @@
+;                       void SetPixel( x, y, n );
+;
+;                       int x,y;                /* Coordenadas del pixel */
+;
+;                       int n;                  /* Valor de pixel */
+;
+
+ARGy            EQU     word ptr [bp+6] ; Direccionamiento de la pila
+ARGx            EQU     word ptr [bp+8]
+ARGn            EQU     byte ptr [bp+10]
+
+RMWbits         EQU     18h             ; Bits de Lectura-modificaci¢n-escritura
+
+
+_TEXT           SEGMENT byte public 'CODE'
+                ASSUME  cs:_TEXT
+
+                EXTRN   _PixelDir:far
+
+                PUBLIC  _SetPixel
+_SetPixel       PROC    far
+
+                push    bp              ; Introduce en la pila los registros
+					; del PQLL
+                mov     bp,sp
+
+                mov     ax,ARGy         ; AX := y
+                mov     bx,ARGx         ; BX := x
+                call   _PixelDir        ; AH := m scara de bit
+                                        ; ES:BX -> buffer
+                                        ; CL := cantidad de bits a desplazar 
+                                        ;       a la izquierda
+
+; Establece el registro de M scara de bit del controlador de gr ficos
+
+                shl     ax,cl           ; AH := m scara de bit en posici¢n
+                                        ;       adecuada
+                mov     dx,3CEh         ; GC puerto del registro de Direcciones
+                mov     al,8            ; AL := n£mero del registro de
+                                        ;       M scara de bit
+                out     dx,ax
+
+; Establece el registro de Modo del controlador de gr ficos
+
+                mov     ax,0005h        ; AL :=  n£mero del registro de Modo
+                                        ; AH :=  modo escritura 0
+                                        ;        modo lectura 0 (bit 3)
+                out     dx,ax
+
+; Establece el registro de Rotar dato/seleccionar funci¢n
+
+                mov     ah,RMWbits      ; AH := bits de Lectura-modificaci¢n-
+                                        ;       escritura
+                mov     al,2            ; AL := Rotar dato/seleccionar funci¢n
+                out     dx,ax
+
+; Establece y activa el registro de Set/reset
+
+                mov     ah,ARGn         ; AH := valor de pixel
+                mov     al,0            ; AL := n£mero del registro Set/reset
+                out     dx,ax
+
+                mov     ax,0F01h        ; AH := valor para Activaci¢n de
+					;       set/reset (todos los planos
+					;	de bit activados)
+                                        ; AL := n£mero del registro de 
+                                        ;       Activaci¢n de set/reset
+                out     dx,ax
+
+; Pone el valor del pixel
+
+                or      es:[bx],al      ; Carga los latches durante una lectura
+                                        ; de CPU
+                                        ; Actualiza los latches y los planos de
+                                        ; bit durante una escritura de CPU
+
+; Restablece los registros por defecto del controlador de gr ficos
+
+                mov     ax,0FF08h       ; M scara de bit por defecto
+                out     dx,ax
+
+                mov     ax,0005         ; Registro de Modo por defecto
+                out     dx,ax
+
+                mov     ax,0003         ; Seleccionar funci¢n por defecto
+                out     dx,ax
+
+                mov     ax,0001         ; Activaci¢n de set/reset por defecto
+                out     dx,ax
+
+                mov     sp,bp           ; Restaura los registros del PQLL
+                                        ; y vuelve
+                pop     bp
+                ret
+
+_SetPixel       ENDP
+
+_TEXT           ENDS
+
+                END

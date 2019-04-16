@@ -1,0 +1,6 @@
+lib ..\lib\fivepro2.lib
+lib ..\lib\Objects3.lib
+lib clipper
+lib extend
+lib terminal
+lib dbfntx

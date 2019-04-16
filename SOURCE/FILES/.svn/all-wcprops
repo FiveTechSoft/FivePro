@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/svn/!svn/ver/3/trunk/SOURCE/FILES
+END
+MD.C
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/3/trunk/SOURCE/FILES/MD.C
+END
+RD.C
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/3/trunk/SOURCE/FILES/RD.C
+END
+MKDIR.C
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/3/trunk/SOURCE/FILES/MKDIR.C
+END
+CD.C
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/3/trunk/SOURCE/FILES/CD.C
+END
+CHDIR.C
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/3/trunk/SOURCE/FILES/CHDIR.C
+END
+RMDIR.C
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/3/trunk/SOURCE/FILES/RMDIR.C
+END

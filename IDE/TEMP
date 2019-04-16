@@ -1,0 +1,12 @@
+   DEFINE WINDOW oWnd FROM 2, 4 TO 17, 56 ;
+      TITLE "Nueva Caja de Di logo"
+
+   @  2, 45 SAY "&Label" OF oWnd
+
+   @ 12, 39 BUTTON "&Button" OF oWnd
+
+   @  9, 39 BUTTON "&Button" OF oWnd
+
+
+
+   ACTIVATE WINDOW oWnd

@@ -1,0 +1,80 @@
+
+   ^BSintax^N
+
+     nTxtLines( <cTxtFileName> )  --> nLines
+
+
+   ^BParameters^N
+
+     
+
+
+TRES
+
+     
+
+
+
+
+!SeeAlso:
+
+     nTxtWords() nTxtScan() TxtEval()
+
+
+   ^BSintax^N
+
+     cFReadLine( <nFileHandle> )  --> cLine
+
+
+   ^BParameters^N
+
+     <nFileHandle> Is the handle of the Text file.
+
+
+TRES
+
+     
+
+
+
+
+!SeeAlso:
+
+     nTxtWords() nTxtScan() TxtEval()
+
+
+   ^BSintax^N
+
+     nTxtScan( <cFileName>, <cStringOrCodeBlock>, [@<cLine>],
+
+
+   ^BParameters^N
+
+     
+
+
+
+
+
+
+
+
+   ^BSintax^N
+
+     nTxtWords( <cFileName> )  --> nWords
+
+
+   ^BParameters^N
+
+     <cFileName> Is the name of the File wich number of words we want
+
+
+TRES
+
+     <nWords> Is the total number of words it has got
+
+
+
+
+
+

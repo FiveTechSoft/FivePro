@@ -1,0 +1,7 @@
+// Make gen‚rico para el IDE de FivePro
+
+$(FILE).obj : $(FILE).prg
+   clipper $(FILE) /n/w/i..\include
+
+$(FILE).exe : $(FILE).obj
+   c:\blinker\blinker fi $(FILE) lib ..\lib\FivePro2, c:\Lib\Objectsp3

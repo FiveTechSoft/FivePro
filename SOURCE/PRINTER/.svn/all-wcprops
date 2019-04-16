@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/svn/!svn/ver/3/trunk/SOURCE/PRINTER
+END
+MARTALIS.PRG
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/3/trunk/SOURCE/PRINTER/MARTALIS.PRG
+END
+PRNINIT.C
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/3/trunk/SOURCE/PRINTER/PRNINIT.C
+END
+LSTVIEW.PRG
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/3/trunk/SOURCE/PRINTER/LSTVIEW.PRG
+END
+PRNPAPER.ASM
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/3/trunk/SOURCE/PRINTER/PRNPAPER.ASM
+END
+PRNPAPER.C
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/3/trunk/SOURCE/PRINTER/PRNPAPER.C
+END
+PRNCOUNT.C
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/3/trunk/SOURCE/PRINTER/PRNCOUNT.C
+END
+ISSPOOL.C
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/3/trunk/SOURCE/PRINTER/ISSPOOL.C
+END
+PRINTER.PRG
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/3/trunk/SOURCE/PRINTER/PRINTER.PRG
+END
+PRNSTAT.C
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/3/trunk/SOURCE/PRINTER/PRNSTAT.C
+END
+ISLPT.C
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/3/trunk/SOURCE/PRINTER/ISLPT.C
+END
+FROMTO.PRG
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/3/trunk/SOURCE/PRINTER/FROMTO.PRG
+END
+PARALEL.C
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/3/trunk/SOURCE/PRINTER/PARALEL.C
+END
+LIST.PRG
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/3/trunk/SOURCE/PRINTER/LIST.PRG
+END

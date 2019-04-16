@@ -1,0 +1,7 @@
+#line 1 "objectsp.ch"
+#line 3 "P.PRG"
+function main()
+
+ FUNCTION ppp ; local Self := QSelf()
+
+return(nil)

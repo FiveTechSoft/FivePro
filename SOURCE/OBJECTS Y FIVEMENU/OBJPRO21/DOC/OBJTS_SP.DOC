@@ -1,0 +1,1902 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Printout of `Objects V 2.1 ( Profesional )'
+Printed by the Norton Guides Printer v2.0 (NGP.EXE).
+
+
+                                 - Page 1 -
+Norton Guide: `Objects V 2.1 ( Profesional )'
+
+
+Menu List: Sintaxis, Logo
+
+
+             ‹                    ‹‹ﬂﬂﬂ‹‹               ‹‹‹ﬂﬂﬂﬂ‹‹‹           
+
+           ‹ﬂ€ﬂ‹              ‹‹ﬂﬂ€€€€€€€ﬂﬂ‹‹        ‹ﬂﬂ €€€€€€€€ ﬂﬂ‹        
+
+         ‹ﬂ€€€ﬂ‹ﬂ‹          €ﬂ‹‹€€€€€€€€   ‹‹€€     €  €€€€€€€€€€ ﬂ‹ﬂ€‹         
+
+       ‹ﬂ€€€€€ﬂ‹ﬂ‹ﬂ‹        €€€€ﬂﬂ‹‹€  ‹‹€ﬂ‹ﬂ‹€    €  €€€€€€€€€€€€ ‹ﬂ‹€         
+
+     ‹ﬂ€€€€€€€ﬂ‹ﬂ‹ﬂ‹ﬂ‹      €€€€€€ €ﬂﬂ€‹ﬂ‹ﬂ‹ﬂ‹€    € €€€€€€€€€€€€ ﬂ‹ﬂ‹€
+
+   ‹ﬂ€€€€€€€€ €‹ﬂ‹ﬂ‹ﬂ‹ﬂ‹    €€€€€€€€€€€‹ﬂ‹ﬂ‹ﬂ‹€    € €€€€€€€€€€€ ‹ﬂ‹ﬂ‹€
+
+   €€€€€€€€€€ €‹ﬂ‹ﬂ‹ﬂ‹€ﬂ‹   €€€€€€ €€€€‹ﬂ‹ﬂ‹ﬂ‹ﬂ‹ ‹ ‹€  €€€€€€€€€€‹ﬂ‹ﬂ‹€
+
+    ﬂﬂ‹‹€€€€€ €‹ﬂ‹ﬂ‹€ﬂ‹ﬂ‹ﬂ‹ ﬂﬂ‹‹€€€€€€€‹ﬂ‹ﬂ‹ﬂ‹ﬂ‹ﬂ‹ﬂ‹ﬂ€‹€€€ €€€ ‹ﬂ‹ﬂ‹€ﬂ‹ﬂ‹ﬂ‹ﬂ‹ﬂ‹
+
+        ﬂﬂ‹‹€€€‹ﬂ‹€ﬂ‹ﬂ‹ﬂ‹ﬂ‹ﬂ‹   ﬂﬂ‹‹€€€‹ﬂ‹ﬂ‹ﬂ‹ﬂ‹ﬂ‹ﬂ‹ﬂ‹ﬂ€‹‹ €€ ﬂ‹€‹€ﬂ‹ﬂ‹ﬂ‹ﬂ‹ﬂ‹ﬂ‹
+
+            ﬂﬂﬂﬂﬂﬂ ﬂ ﬂ ﬂ ﬂ ﬂ        ﬂﬂﬂﬂﬂ‹ﬂ‹ﬂ‹ﬂ‹ﬂ‹ﬂ‹ﬂ     ﬂﬂﬂﬂﬂﬂ‹ﬂ‹ﬂ‹ﬂ‹ﬂ‹ﬂ‹ﬂ‹ﬂ‹
+
+                                                                 ﬂ ﬂ‹ﬂ‹ﬂ‹ﬂ‹ﬂ‹ﬂ
+
+                 
+
+             ﬂﬂﬂﬂﬂ   ﬂﬂﬂﬂﬂﬂ       ﬂﬂ ﬂﬂﬂﬂﬂﬂﬂ   ﬂﬂﬂﬂﬂ  ﬂﬂﬂﬂﬂﬂﬂﬂ  ﬂﬂﬂﬂﬂ          
+
+            ﬂﬂ   ﬂﬂ  ﬂﬂ   ﬂﬂ      ﬂﬂ ﬂﬂ       ﬂﬂ   ﬂﬂ    ﬂﬂ    ﬂﬂ       
+
+           ﬂﬂﬂ   ﬂﬂﬂ ﬂﬂﬂﬂﬂﬂ       ﬂﬂ ﬂﬂﬂﬂﬂ   ﬂﬂﬂ         ﬂﬂ     ﬂﬂﬂﬂﬂ
+
+            ﬂﬂ   ﬂﬂ  ﬂﬂ   ﬂﬂ ﬂﬂ   ﬂﬂ ﬂﬂ       ﬂﬂ   ﬂﬂ    ﬂﬂ         ﬂﬂ
+
+             ﬂﬂﬂﬂﬂ   ﬂﬂﬂﬂﬂﬂ   ﬂﬂﬂﬂﬂ  ﬂﬂﬂﬂﬂﬂﬂ   ﬂﬂﬂﬂﬂ     ﬂﬂ    ﬂﬂﬂﬂﬂﬂ
+
+                             Professional Edition
+
+                                                        
+
+                           OOPS Engine for Clipper 5                        
+
+                          (C) F.Pulp¢n, A.Linares 1993  
+
+
+
+
+
+
+
+
+
+
+
+                                 - Page 2 -
+Norton Guide: `Objects V 2.1 ( Profesional )'
+
+
+Menu List: Sintaxis, Comandos
+
+
+
+
+    * La Cabecera puede tener cualquiera de estas sintaxis:
+
+      [ CREATE ] CLASS <cClassName> [ INHERIT FROM <cSuperClass> ]
+
+      [ CREATE ] CLASS <cClassName> [ INHERIT <cSuperClass> ]
+
+      [ CREATE ] CLASS <cClassName> [ FROM <cSuperClass> ]
+
+      [ CREATE ] CLASS <cClassName> [ OF <cSuperClass> ]
+
+      La palabra CREATE es opcional.
+
+
+
+    Sintaxis General:
+
+    [ PreAmbito ] <VarType> [ AS <lista de Tipos> ] [ PostAmbito ]
+
+    PreAmbito puede ser:   EXPORT
+                           PROTECT
+                           HIDE
+
+    <VarType> Puede ser :
+
+                       - Variables de Instancia:
+                                                  VAR
+                                                  INSTVAR
+                                                  DATA
+                       - Variables de Clase:
+                                                  CLASSVAR
+                                                  CLASSDATA
+
+     Los tipos de <lista de tipos> pueden ser:
+
+                                ALL
+                                NIL
+                                UNDEFINED
+                                CHARACTER
+                                LOGICAL
+                                BLOCK
+                                DATE
+                                ARRAY
+                                OBJECT
+
+
+     PostAmbito puede ser:   LOCAL
+                             HIDDEN
+                             PROTECTED
+                             READONLY
+                             PUBLIC
+
+                                 - Page 3 -
+Norton Guide: `Objects V 2.1 ( Profesional )'
+
+
+                             EXPORT
+
+        Todas las declaraciones que no tengan PreAmbito ni PostAmbito
+     asumir†n el valor de †mbito por defecto.
+
+        PreAmbito y PostAmbito son excluyentes: si se pone uno no se
+     puede poner el otro. No cambian el Ambito por defecto. Solo
+     afectan al †mbito de las Variables ¢ mÇtodos de la declaraci¢n
+     en la que se incluyan.
+
+        Si se omite  AS <Lista de tipos> se asigna por defecto el
+     tipo ALL.
+
+        Ejemplos.:
+
+          PROTECTED:    // Pone †mbito de acceso actual:
+                        // Protegido/SoloLectura
+
+          EXPORT DATA cVar1, cVar2,... // a§ade InstVars con †mbito de
+                                       // acceso p£blico.
+
+          CLASSDATA cVarN    // A§ade ClassVars de ambito de acceso
+                             // por defecto. ( En este caso ser°a
+                             // Protegido/SoloLectura ).
+
+See Also: "Variables" "Ambito" 
+
+
+
+ -  Declaraciones de †mbito de acceso por defecto.
+
+        Son las declaraciones que ponen un nuevo valor de †mbito
+     por defecto para las siguientes declaraciones de variables de
+     instancia, de variables de clase y de mÇtodos, que no incluyan
+     PreAmbito ¢ PostAmbito en s° mismas.
+
+   * Tres tipos de declaraci¢n de †mbito por defecto:
+
+     EXPORT: ¢ PUBLIC:
+
+           Es el Valor de †mbito de acceso por defecto al declarar una
+         clase; permite leer/escribir variables de InstVar ¢ ClassVar ¢
+         llamar a un mÇtodo desde cualquier funci¢n/procedimiento que
+         tenga referencia de cualquier instancia de la clase que estamos
+         declarando.
+
+     PROTECTED: ¢ READONLY:
+
+           Permite lectura desde cualquier funci¢n/procedimiento pero
+         la escritura solo est† permitida hacerla desde los mÇtodos de
+         la clase. Para los mÇtodos declarados con este valor de
+         †mbito por defecto el resultado ser† el mismo que el de una
+         declaraci¢n EXPORT:
+
+     LOCAL:  ¢ HIDDEN:
+
+                                 - Page 4 -
+Norton Guide: `Objects V 2.1 ( Profesional )'
+
+
+
+           Los accesos de qualquier tipo ( a var ¢ metodo ) s¢lo est†n
+         permitidos dentro del †mbito de la Clase: ( Sus mÇtodos y los
+         de sus clases Padre ).
+   
+
+
+
+ - Declaraciones de variables con protecci¢n de tipo:
+
+      Sintaxis:
+
+        [PreAmbito] <VarType> AS <Lista de Tipos> [PostAmbito]
+
+
+    * Los tipos de <lista de tipos> pueden ser:
+
+                 ALL                permite asignar Todos los tipos.
+                 NIL                  "        "    tipos      Nil.
+                 UNDEFINED            "        "      "        Nil.
+                 NUMERIC              "        "      "    Numeric.
+                 CHARACTER            "        "      "  Character.
+                 LOGICAL              "        "      "    Logical.
+                 BLOCK                "        "      "  CodeBlock.
+                 DATE                 "        "      "       Date.
+                 ARRAY                "        "      "      Array.
+                 OBJECT               "        "      "     Object.
+
+
+    * La Lista de tipos define los "tipos" que queremos que admitan
+      las Vars de la lista de la declaraci¢n de variable:
+
+      Ej.: Para que las instVar declaradas en una Declaraci¢n VAR
+           s¢lo admitan tipos "caracter" y tipos "Numeric", se
+           construye la declaraci¢n as°:
+
+              PROTECT VAR cnVar1, cnVar2 AS Character, Numeric
+
+           Y las siguientes expresiones producir†n un "Warning" #4. en
+           tiempo de ejecuci¢n:
+
+              ::cnVar1 = array( 8 )
+              ::cnVar2 = NIL
+
+
+
+ - Declaraciones de MÇtodos. Sintaxis general:
+
+              [ PreAmbito ] METHOD  <Lista de descripciones> ;
+                                       [ PostAmbito ] [ CONSTRUCTOR ]
+
+         ¢
+
+              [ PreAmbito ] MESSAGE <Lista de descripciones>
+                                       [ PostAmbito ] [ CONSTRUCTOR ]
+
+                                 - Page 5 -
+Norton Guide: `Objects V 2.1 ( Profesional )'
+
+
+
+
+             PreScope puede ser:   EXPORT
+                                   HIDE
+
+             PostAmbito puede ser:   LOCAL
+                                     HIDDEN
+                                     PUBLIC
+                                     EXPORT
+
+       PreAmbito y PostAmbito son excluyentes: si se pone uno no se
+     puede poner el otro. No cambian el Ambito por defecto. Solo
+     afectan al †mbito de las Variables ¢ mÇtodos de la declaraci¢n
+     en la que se incluyan.
+
+       La Clausula CONSTRUCTOR hace que todos los mÇtodos de la
+     lista devuelvan SELF. Tenga en cuenta que si en el c¢digo del
+     mÇtodo usted pone RETURN <anyValue>, ObjectsP sobreescribe este
+     valor de retorno anotando SELF como valor de retorno del mÇtodo.
+
+
+       Las descripciones de la lista pueden tener diversas formas
+     segun sus necesidades y gustos:
+
+            Descripci¢n simple:
+                                        <cMethodName>
+
+            Descripci¢n simple prototipada:
+
+                                        <cMethodName>( [<parms,...>] )
+
+       La funci¢n asociada ( C¢digo del mÇtodo ) debe llamarse igual
+     que el mensaje ( <cMethodName> ) y debe estar en el mismo m¢dulo
+     que la declaraci¢n de CLASE.
+
+
+            Descripci¢n con renombrado:
+
+                                        <cMethodName> = <cUdfName>
+
+            Descripciones con renombrado prototipadas:
+
+                     <cMethodName>( [<parms,...>] ) = <cUdfName>
+
+                     <cMethodName> = <cUdfName>( [<parms,...>] )
+
+                     <cMethodName>([<parms,...>]) = <cUdf>([<parms,...>])
+
+         La funci¢n asociada ( C¢digo del MÇtodo ) se llamar† <cUdfName>.
+
+      Descripciones Especiales:
+
+            MÇtodo virtual:
+                            <cMethodName>:VIRTUAL
+
+
+                                 - Page 6 -
+Norton Guide: `Objects V 2.1 ( Profesional )'
+
+
+            MÇtodo prototipado virtual:
+
+                            <cMethodName>( [<parms,...>] ):VIRTUAL
+
+         No existe funci¢n asociada al mensaje <cMethodName> si se
+      manda ese mensaje Objects simplemente no har† nada devolviendo
+      NIL.
+
+
+            MÇtodo SetGet:
+                            <cMethoName>:SETGET
+
+            MÇtodo prototipado SetGet:
+
+                            <cMethodName>( [<parms,...>] ):SETGET
+
+
+         Declara el mÇtodo <cMethodName> como SETGET. Esto signigfica
+      que puede ser usado como si fuera una variable, recibir† un
+      par†metro cuando se asigne y no recibir† nada cuando no se
+      asigne. En cualquier caso este metodo debe devolver alg£n valor.
+      Recuerde que si aplica la clausula CONSTRUCTOR, Çsta invalida
+      los valores de retorno de los metodos de la lista.
+
+         Ej.:
+
+              // Declaraci¢nes en el cuerpo de Clase.
+
+              HIDE VAR cTitle
+
+              METHOD  Title:SETGET
+
+              // C¢digo del mÇtodo
+
+              METHOD FUNCTION Title( cTit ) CLASS  Window
+
+                  if valtype( cTit ) == "C"
+                     ::cTitle = padc( cTit, ::nTitLen )
+                  endif
+
+              Return ::cTitle
+
+
+              // y se puede usar como una variable de instancia ¢
+              // de clase mas.
+
+              cTit := oWin:Title := "Mi ventana"
+
+              nLenTit = len( oWin:Title )
+
+
+        Si solo hay un una descripci¢n que no sea <Method>:SETGET ni
+      <Method>:VIRTUAL, en la lista de descripciones, se admiten las
+      siguientes declaraciones:
+
+
+                                 - Page 7 -
+Norton Guide: `Objects V 2.1 ( Profesional )'
+
+
+      [ PreAmbito ] Method/Message <cMethodDesc> [ VIRTUAL ] [ PostAmbito ]
+      [ PreAmbito ] Method/Message <cMethodDesc> [ SETGET ]  [ PostAmbito ]
+
+
+        Por £ltimo y aunque sin clausulas SETGET ni VIRTUAL se admite esta
+      sintaxis por compatibilidad con algunos sistemas:
+
+      [PreAmbito] MESSAGE <cMess>[(params)] METHOD <cUdf>[(params)]     ;
+                       [, <cMessN>[(params)] METHOD <cUdfN>[(params)] ] ;
+                   [PostAmbito] [ CONSTRUCTOR ]
+
+
+        Como habr† podido observar puede describir en su declaraci¢n
+      de mÇtodo el tipo y n£mero de par†metros que este va a recibir.
+      No es de ninguna utilidad para Objects, pero si lo ser† para
+      usted que tendr† una idea m†s completa de como es su clase con
+      s¢lo ver la parte declarativa de Çsta; sin tener que buscar en
+      su prg el c¢digo de todos los mÇtodos para ver la estructura de
+      los par†metros de sus mÇtodos. Esto se conoce como "Prototipo"
+      de mÇtodo.
+
+
+
+        Objects profesional admite c¢digo en linea, como los
+      compiladores de C++. Sintaxis:
+
+        [PreAmbito] MESSAGE/METHOD <cMess>[(params)] INLINE ;
+                     <Code>[ , <MoreCode> [PostAmbito]
+
+        Por compatibilidad con versiones anteriores de Objects se
+      admite tambien la sintaxis BLOCK:
+
+        [PreAmbito] MESSAGE/METHOD <cMess>[(params)] BLOCK ;
+                     { | Self [params] | <BlockCode> } [PostAmbito]
+
+        Ej.: PROTECT METHOD Add( oCtl ) INLINE ;
+                                       aadd( ::aControls, oCtl ), oCtl
+
+             Equivale a la Clausula BLOCK siguiente:
+
+             PROTECT METHOD Add( oCtl ) BLOCK ;
+                      { | Self, oCtl | aadd( ::aControls, oCtl ), oCtl }
+
+
+
+    * La declaraci¢n de Cierre ¢ fin de Declaraci¢n de Clase puede
+      ser cualquiera de estas dos:
+
+           ENDCLASS
+             ¢
+           END CLASS
+
+      RECUERDA: Cerrar la Clase es obligatorio.
+
+       Puedes tener varias clases en el mismo fichero, siempre y
+
+                                 - Page 8 -
+Norton Guide: `Objects V 2.1 ( Profesional )'
+
+
+     cuando no haya conflicto entre los nombres de las funciones y
+     antes de cada declaracion de clase se ponga un:
+
+          #include "ObjectsP.ch"
+
+
+
+ - Declaraciones de funciones asociadas a los mÇtodos. ( C¢digo del
+   MÇtodo ). Hay cuatro estilos. En general todas tienen esta forma:
+
+         METHOD <Estilo>
+
+             La funci¢n ser† p£blica ( Metodo externo ), si se declara
+           antes que ninguna declaraci¢n de clase en el mismo fichero
+           prg . Si la declaraci¢n de C¢digo de mÇtodo se hace despuÇs
+           de una declaraci¢n de clase, la funci¢n siempre ser†
+           static.
+
+    * General Style
+
+        METHOD [ FUNCTION/PROCEDURE ] <MethodName>[ ( <uParms,...> ) ] ;
+                                                [ CLASS <ClassName> ]
+
+    * ASPEN style
+
+        METHOD <MethodName>[ ( <uParms,...> ) ] [ CLASS <ClassName> ]
+
+    * C++ style
+
+        METHOD <ClassName>::<MethodName>[ ( <uParms,...> ) ]
+
+    * dBase for Windows style
+
+        METHOD <ClassName>.<MethodName>[ ( <uParms,...> ) ]
+
+
+
+ - Llamadas a MÇtodos de clases Paternas:
+
+      De la Clase Paterna Principal:
+
+           ::Super:method( params,... )
+
+      De cualquier otra clase paterna:
+
+           ::Parent( ParentName ):method( params,... )
+
+      Desde fuera de las clases siempre se debe usar esta sintaxis:
+
+           obj:Super( ParentName ):method( params,... )
+
+
+      Puede usar los terminos :Super ¢ :Parent indistintamente ya que son
+      totalmente equivalentes. Adem†s se admite la sintaxis "Super"
+      de Objects 2.0 ( solo dentro del c¢digo de un mÇtodo ) :
+
+                                 - Page 9 -
+Norton Guide: `Objects V 2.1 ( Profesional )'
+
+
+
+           Super:method( params,... )
+
+      Es inutil intentar acceder a las Vars a traves de llamadas a
+      ":Parent()" ya que hemos heredado directamente todas las
+      definiciones de estas. Adem†s, al hacerlo, generaremos un error
+      irrecuperable # 9.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                 - Page 10 -
+Norton Guide: `Objects V 2.1 ( Profesional )'
+
+
+Menu List: Sintaxis, Funciones
+
+
+
+
+       oClone( oSource ) -> oNewObject
+
+       oClone() hace rÇplicas de objetos y arrays, todos los contenidos
+       de oSource son copiados a objetos y arrays nuevos. Es decir, las
+       referencias a objetos ¢ arrays no se asignan, se copian sus
+       contenidos en instancias nuevas, diferentes, de Çstos. Esto se
+       llama copia profunda.
+
+
+
+       SaveStruct( cFileName, uVar ) -> lSuccess
+
+       uLoadStruct( cFileName ) -> uVar
+
+
+       SaveStruct() Guarda el contenido de uVar ( cualquier tipo de
+     variable Clipper en el fichero cFileName ). El contenido de la
+     variable puede luego ser recuperado con uLoadStruct()
+
+       SaveStruct() lo guarda todo menos los codeBlocks. As°, si un
+     elemento de un array ¢ un objeto es un codeBlock, se recuperar†
+     con LoadStruct como NIL.
+
+       LoadStruct() devuelve la variable guardada con SaveStruct()
+     si la lectura fue correcta, si n¢ devuelve NIL.
+
+       Estas funciones usan MemoRead() y MemoWrit(), por ello el
+     tama§o del fichero est† limitado a 64 Kb.
+
+       No podemos recuperar codeblocks de disco por estar estos muy
+     ligados fichero OBJ que lo soporta en tiempo de compilaci¢n,
+     de enlazado y ejecuci¢n por referencias a variables locales ¢
+     est†ticas ¢ por referencias a otras funciones de cualquier tipo.
+     Por eso uLoadStruct(), al cargar un objeto, buscar† en su clase un
+     mÇtodo llamado DeftBlocks(). Si lo tuviera llamar†  a ese mÇtodo
+     del objeto nuevo ya cargado. Para todo Objeto que tenga codeblocks
+     y se pretenda almacenarlo en disco con estas funciones, su clase
+     deber°a tener definido este mÇtodo.
+
+       El mÇtodo DeftBlocks() debe cargar las instVar que lo precisen
+     con codeblocks para que funcione correctamente el objeto creado a
+     partir del fichero. Normalmente todo ir† bien si esos codeBlocks
+     solo tienen referencias a Self ( el objeto que acabamos de cargar
+     de disco ).
+
+       A continuaci¢n tienes un ejemplo simple de clase "Salvable" a
+     partir de la Clase GET:
+
+       CLASS SGet INHERIT Get
+
+
+                                 - Page 11 -
+Norton Guide: `Objects V 2.1 ( Profesional )'
+
+
+            INSTVAR uData
+
+            METHOD  DeftBlocks
+
+       ENDCLASS
+
+
+       METHOD SGet::DeftBlocks()
+
+          ::block = {|u| if( pCount() > 0, ::uData := u, ::uData ) }
+
+       Return nil
+
+
+
+       Error() -> Objeto Error
+
+        Es totalmente equivalente a ErrorNew(), la diferencia es que
+   prepara a la Clase de Clipper para ser heredada por Objects y le
+   a§ade el mÇtodo new().
+
+
+
+       Get() -> Objeto Get sin iniciar
+
+        Es totalmente equivalente a GetNew() sin par†metros, la £nica
+   diferencia es que prepara a la Clase Get de Clipper para ser heredada
+   por Objects y le a§ade el mÇtodo New() para iniciar el objeto con los
+   mismos par†metros que GetNew().
+
+       "Get():New( nRow, nCol )"  equivale a "GetNew( nRow, nCol )"
+
+
+
+       TBColumn() -> Objeto TBColumn sin iniciar
+
+        Es totalmente equivalente a TBColumnNew() sin par†metros, la
+   £nica diferencia es que prepara a la Clase TBColumn de Clipper para ser
+   heredada por Objects y le a§ade el mÇtodo New() para iniciar el objeto
+   con los mismos par†metros que TBColumnNew().
+
+
+
+       TBrowse() -> Objeto TBrowse sin iniciar
+
+        Es totalmente equivalente a TBrowseNew() sin par†metros, la £nica
+   diferencia es que prepara a la Clase TBrowse de Clipper para ser
+   heredada por Objects y le a§ade el mÇtodo New() para iniciar el objeto
+   con los mismos par†metros que TBrowseNew().
+
+       TBrowse() devuelve lo mismo que TBrowseNew(). Un objeto TBrowse sin
+   skipBlock,... Si deseas un Objeto TBrowse como el que devuelve
+   TbrowseDB() puedes hacerlo as°:
+
+                oDBBrowse := SetTBrowDB( TBrowse() )
+
+                                 - Page 12 -
+Norton Guide: `Objects V 2.1 ( Profesional )'
+
+
+
+             EJ.:
+                  local oBrow := TBrowse( 10, 10, 30, 70 )
+                   ¢
+                  local oBrow := TBrowse():New( 10, 10, 30, 70 )
+
+                  SetTBrowDb( oBrow )
+
+
+
+       SetTBrowDB( oBrowse ) -> oBrowseParaHojearDBFs
+
+       A§ade a un Objeto Browse los codeblocks por defecto para hojear
+       DBF's.
+
+       Ej.:
+
+                  local oBrw := SetTBrowDB( Browse() )
+
+       equivale a :
+
+                  local oBrw := TBrowseDB()
+
+
+
+       ProcName( nProcDeep ) -> cDescription
+
+
+       ProcName() ha sido ampliada dando mas informaci¢n acerca de los
+   mÇtodos, proporcionando el nombre de la clase del objeto en lugar de
+   "obj".  Ej.:
+
+       Antes: ProcName( 1 ) devolv°a -> "obj:NEW"
+
+       Ahora: ProcName( 1 ) devuelve -> "TBARRAY:NEW"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                 - Page 13 -
+Norton Guide: `Objects V 2.1 ( Profesional )'
+
+
+Menu Choice: General, Generalidades
+
+
+
+    Caracter°sticas generales del sistema Objects Profesional:
+  =====================================================================
+
+       - Sintaxis Flexible que permite compilar c¢digo antiguo, o de
+         otros Sistemas OOPS, con pocas o ninguna modificaci¢n seg£n los
+         casos. Podr†s generar c¢digo que se adapte facilmente a futuros
+         productos del ramo xBase.
+
+       - Sobrescribe el modulo SEND de Clipper lib, por tanto al
+         enlazar debe anteponerse a Clipper.lib
+
+           Ej: BLINKER FILE MiApp LIB ObjectsP, Clipper  ,etc....
+
+           No obstante es totalmente compatible con el m¢dulo SEND de
+         Clipper.lib y por tanto tambiÇn es compatible en tiempo de
+         enlazado y de ejecuci¢n con los dem†s productos similares basados
+         en el m¢dulo SEND original.( oClip, Dialog, anteriores versiones
+         de Objects... ).
+
+           El m¢dulo SEND original tiene un limite de 64 Kb para almacenar
+         los datos de todas las Clases. Objects Profesional, en cambio,
+         tiene un l°mite de 64 Kb por clase.
+
+       - Usa la VMM de Clipper para almacenar las definiciones de
+         las clases. Por ello el tama§o y cantidad de clases solo est†
+         limitado por la cantidad de VMM libre disponible en el momento
+         de la ejecuci¢n.
+
+       - 99% en C. La construci¢n de las clases y la herencia es casi
+         instantanea y el tr†fico de mensajes tan r†pido como el del
+         mism°simo m¢dulo SEND de Clipper.Lib.
+
+       - Permite Variables de Instancia y de Clase.
+
+       - Protecci¢n por †mbitos de acceso Public/Export, Protected/
+         ReadOnly y Private/Local; para ambos tipos de variables. Y el
+         mismo tipo de protecci¢n Public y Local para mÇtodos.
+
+       - Protecci¢n de tipos para ambas clases de variables. Permite,
+         en runtime, que solo se admitan para esa variable los tipos
+         definidos para ella, por defecto todas tienen el tipo
+         ALL, que admite todos los tipos. Ning£n sistema para Clipper
+         hasta ahora permite hacer esto. Le ahorrar† mucho c¢digo de
+         comprobaci¢n de tipos mejorando adem†s el rendimiento de su
+         sistema de clases.
+
+       - Se pueden definir mÇtodos "en linea": con el c¢digo dentro
+         del bloque de definici¢n de clase.
+
+       - El sistema NO implementa HERENCIA MULTIPLE.
+
+
+                                 - Page 14 -
+Norton Guide: `Objects V 2.1 ( Profesional )'
+
+
+       - Se puede heredar de las clases predefinidas de Clipper,
+         sobrescribir sus mÇtodos y acceder a los originales a travÇs de
+         ::Parent ¢ ::Super.
+
+           Ej:
+             CLASS SGet From Get
+
+                 INSTVAR uData
+
+                 METHOD  New, varGet, varPut
+
+             ENDCLASS
+
+             METHOD New( ...... )
+
+                ::Parent:New( ....... )
+
+                // etc,....
+
+             Return Self
+
+       - El debugger es 100% operativo, con las clases compiladas con
+         /b y con los objetos creados por Çstas. Desde el inspector
+         de objectos del debugger se puede conocer el contenido de las
+         InstVars y ClassVars y se puede alterar su contenido.
+
+           Hay que tener cuidado con las ClassVars ya que el inspector
+         de objetos del debugger las trata como si fueran variables de
+         instancia, no las diferencia. Quiere decir, que si modificas
+         una classVar, la modificas para todas las instancias ( objetos )
+         de esa clase.
+
+       - Llamadas a "parent" r†pidas y de Sintaxis f†cil:
+
+            ::Parent:method( params,... )
+               ¢
+            ::Super:method( params,... )
+
+         Donde Parent ¢ Super se refieren al primer Padre. Para
+         referirse a otro padre procedente de una herencia anterior
+         se usa la sintaxis siguiente:
+
+            ::Parent( ParentName ):method( params,... )
+               ¢
+            ::Super( ParentName ):method( params,... )
+
+
+
+
+
+
+
+
+
+
+                                 - Page 15 -
+Norton Guide: `Objects V 2.1 ( Profesional )'
+
+
+Menu Choice: General, Declarando una Clase
+
+
+
+   El cuerpo de la declaraci¢n de Clase
+ ============================================================
+
+    La declaraci¢n de clase. En general consta de tres partes:
+
+       Cabecera de Clase.
+
+          Declaraciones de vars, de †mbito y de mÇtodos.
+
+       Cierre de Clase.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                 - Page 16 -
+Norton Guide: `Objects V 2.1 ( Profesional )'
+
+
+Menu Choice: General, La herencia.
+
+
+
+    Algunas notas acerca de la Herencia.
+ ============================================================
+
+    - Todos los MÇtodos, InstVars ¢ ClassVars que se hayan heredado
+      de alguna otra clase se pueden sobrescribir en cuanto al tipo
+      ( MÇtodo, InstVar, ClassVar ), al †mbito de acceso ( EXPORT,
+      PROTECTED, LOCAL ) y la protecci¢n de "type".
+
+
+    - Es conveniente afinar en la nomenclatura de los s°mbolos de las
+      clases, o sea que mismas palabras respondan exactamente al mismo
+      concepto en todas las clases. Esto evita grandes problemas, y
+      dar† mayor coherencia a su sistema de clases.
+
+    - Objects puede heredar de las clases predefinidas de Clipper.
+      Para ello lleva incorporados unos pseudoconstructores con el
+      mismo nombre de las clases predefinidas de Clipper ( Error,
+      Get, TBColumn y TBrowse ). Estos constructores a§aden a estas
+      clases un mÇtodo "New" totalmente equivalente a las funciones
+      constructoras de cada clase de Clipper ( ErrorNew, GetNew,
+      TBColumnNew y TBrowseNew ) y las preparan para herencia.
+
+      Ej:
+             CLASS SGet From Get
+
+                 INSTVAR uData
+
+                 METHOD  New
+                 METHOD  varGet, varPut  // puedes sobrescibir
+                                         // mÇtodos y llamarlos con
+                                         // :Parent ¢ :Super
+             ENDCLASS
+
+
+             METHOD New( nRow, nCol,... )
+
+                ::Parent:New( nRow, nCol,... )
+
+                // proceso...
+
+             Return Self
+
+
+             METHOD varGet()
+
+             local uVar := ::Super:varGet()  // Llama al mÇtodo varGet
+                                             // original
+                   // proceso.....
+
+             return uVar
+
+
+                                 - Page 17 -
+Norton Guide: `Objects V 2.1 ( Profesional )'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                 - Page 18 -
+Norton Guide: `Objects V 2.1 ( Profesional )'
+
+
+Menu Choice: General, La Clase "Command"
+
+
+
+   La clase interna Command ( Mandato ). Descripci¢n y uso.
+ ===============================================================
+
+     Objects predefine la clase Command. Esta clase sirve para
+   mandar mensajes definidos por cadenas de caracteres a los objetos o
+   llamar a funciones P£blicas sin necesidad de construir macros ¢
+   emplear codeblocks. Ambos mÇtodos son m†s lentos que el uso de un
+   objeto Command.
+
+   MÇtodos exportados de la Clase Command:
+
+   - New( cCommandName ) -> ObjetoCommand.
+
+   - Name()   -> Devuelve cCommandName: Cadena con el nombre del
+                                        Mensaje definido por el objeto.
+
+   - Exec( params,... ) Ejecuta la funci¢n definida por el objeto
+                        pas†ndole los par†metros y devolviendo lo
+                        que devuelva la funci¢n. Si la funci¢n no
+                        es p£blica ¢ no est† enlazada *** se generar†
+                        un error #12.
+
+   - Compare( oCommand ) -> l¢gico .t. si ambos objetos se refieren
+                           al mismo mensaje. ( Self y el recibido ).
+                           Aqu° sirven las mismas reglas de
+                           comparaci¢n que para los mÇtodos y las
+                           funciones. Para Clipper todos los s°mbolos
+                           estan en may£sculas y se truncan a un
+                           maximo de 10 caracteres. As° GetParamNumber
+                           es lo mismo que GETPARAMNU
+
+   - lExec()  -> .t. si existe una funci¢n p£blica lincada con el
+                 nombre definido por el objeto mensaje. Sirve para
+                 asegurarse de que el mÇtodo exec() va a ejecutar
+                 realmente una llamada a una funci¢n.
+
+   - aSend( aObjects [,params ] ) -> NIL
+                 Env°a el mensaje definido por el objeto Command a
+                 todos los items de aObjects junto con los par†metros
+                 recibidos despuÇs del array de Objetos ( aObjects ).
+
+                 Ej.:
+
+                 Command( "ClassName" ):aSend( { 1, "Cadena", date() } )
+
+                 // equivale a...
+
+                 aEval( { 1, "Cadena", date() }, { |o| o:ClassName() )
+
+                 // ¢ ....
+
+
+                                 - Page 19 -
+Norton Guide: `Objects V 2.1 ( Profesional )'
+
+
+                 local aObjects := { 1, "Cadena", date() }
+                 for i = 1 to len( aObjects )
+                     aObjects[ i ]:ClassName()
+                 next
+
+                 La ventaja principal radica en no tener que evaluar
+                 codeblocks y en que en bucle est† hecho a bajo nivel.
+                 As° resulta que el metodo OCommand:aSend() es el
+                 mas r†pido de los tres ejemplos.
+
+                 Otro ejemplo pr†ctico de aSend:
+
+                 Ej.:
+
+                 local cPassWord := "Clave"
+                 local ocExec    := Command( "Exec" )
+                 local aCommands := { Command( {|| MenuInit() } ),;
+                                      Command( {|| MenuExec() } ),;
+                                      Command( {|| AppEnd() } ) }
+
+
+                             // ejecuta las funciones definidas por los
+                             // tres objetos Command pasandoles el
+                             // par†metro ( cPassword ) a cada una de
+                             // ellas.
+
+                 ocExec:aSend( aObjects, cPassword )
+
+
+
+   Mandando mensajes definidos por un objeto Command a otro objeto.
+
+   El mÇtodo predefinido SEND. Ej.:
+
+      local oMsg := Command( "New" )  // ¢ Command():New( "New" )
+      local oGet := Get():send( oMsg, nRow, nCol,... )
+
+        // Equivale a: Get():New(.... ) solo que el mensaje "New" podr°a
+        // estar definido por datos almacenados en disco ¢.
+
+     Si mandando un mensaje send a un objeto, el primer par†metro que
+   se le pasa no es un objeto "Command", *** se generar† un error #13
+
+   LLamando a una funci¢n definida por un objeto "Command". Ej.:
+
+      local oC := Command( "QOut" ) // ¢ Command():New( "QOut" )
+
+      if oC:lExec()
+
+         oC:exec( "Esto es texto de una llamada a qout()", " OK " )
+         // equivale a: ? "Esto es texto de una llamada a qout()", " OK "
+
+      endif
+
+   Rizando el rizo. Construyendo un objeto a partir de datos caracter.
+
+                                 - Page 20 -
+Norton Guide: `Objects V 2.1 ( Profesional )'
+
+
+
+   Ej.:
+
+      local ocClass  := Command( "Get" )
+      local ocNew    := Command( "New" )
+      local oGet     := ocClass:Exec():send( ocNew, params,... )
+
+      // el equivalente "DataDriven" de: oGet := Get():New( params,... )
+
+
+   La clase Command tambiÇn permite llamar a funciones Static. Para
+   conseguirlo debe llamar a Command() ¢ Command():New() con un
+   codeblock del tipo {|| StaticFuncName() } en lugar de con una
+   cadena que defina el nombre de la funci¢n.
+
+   Ej.:
+        local ocClass := Command( {|| StaticFunc() } )
+
+   TambiÇn puede usar esta tÇcnica para forzar el enlazado de una
+   funci¢n p£blica que va a ser llamada con Command.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                 - Page 21 -
+Norton Guide: `Objects V 2.1 ( Profesional )'
+
+
+Menu Choice: General, Mensajes a Variables
+
+
+
+   Mandando mensajes a variables que no son Objetos.
+ ============================================================
+
+     El sistema soporta para qualquier tipo de variable los siguientes
+   mensajes:
+
+    var:ClassH()    -> nClassHandle > 0 si es un objeto.
+
+    var:ClassName() -> cClassName Cadena con el nombre del typo
+                       de variable, si es un objeto la cadena
+                       contiene el nombre de la clase del objeto.
+
+     Si es un codeblock se le puede mandar el mensaje eval en
+   sustituci¢n de la llamada EVAL( bCode, params,... ):
+
+         bCode:eval( params,... )
+
+     Nuestro nuevo nucleo de clases resuelve los problemas del nucleo
+  original de Clipper con los mensajes eval a codeblocks.
+
+     Para todos los objetos, sean de la clase que sean, adem†s de
+   ClassH y ClassName, el sistema soporta estos mensajes genÇricos:
+
+         obj:Parent( ParentName ):msg( params,... )
+         obj:Super( ParentName ):msg( params,... )
+         obj:Send( oCommand [, params ] )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                 - Page 22 -
+Norton Guide: `Objects V 2.1 ( Profesional )'
+
+
+Menu Choice: General, Mensajes de error.
+
+
+
+   Mensajes y c¢digos de error en tiempo de ejecuci¢n.
+ ============================================================
+
+   Los mensajes de error de Objects tienen la siguiente estructura:
+
+   Error Objects\<Nß Error>  <Mensaje> : <ClassName>:<Method>
+
+   Nß Error   Mensaje 
+   ---------------------------------------------------------------------
+
+   1          Private Method
+                                Se ha intentado acceder a un mÇtodo
+                                LOCAL/HIDDEN desde fuera de la Clase.
+
+   2          Protected Var
+                                Se ha intentado cambiar el contenido
+                                de una Variable PROTECTED/READONLY
+                                desde fuera de la clase.
+
+   3          Private Var
+                                Se ha intentado acceder a una variable
+                                LOCAL/HIDDEN desde fuera de la clase.
+
+   4          Type-Prot Var.
+                                Se ha intentado cambiar el contenido de
+                                una variable con "tipo protegido" con un
+                                tipo diferente de los admitidos en su
+                                definici¢n.
+
+   5          Bad CodeBlock
+                                La funci¢n interna _AddMethod ha recibido,
+                                como par†metro, un codeblock de definici¢n
+                                de mÇtodo no admitido por Objects.
+                                Conviene dejar hacer al preprocesador y no
+                                jugar con estas funciones.
+
+   6          No Exp. Method
+                                El archiconocido "No exported Method".
+                                El mensaje que se manda al objeto no
+                                est† definido para esa clase de objeto.
+                                TambiÇn se puede estar invocando, a
+                                travÇs de "parent()" a un mÇtodo de una
+                                clase que no es ascendiente de nuestra clase.
+
+   7          No PARENT Meth
+                                En   :Parent( <ParentClass> ):<met>
+                                El mensaje <met> no est† definido para
+                                la clase ascendiente <ParentClass>.
+
+   8          No Object Msg.
+                                Has mandado un mensaje no soportado por
+
+                                 - Page 23 -
+Norton Guide: `Objects V 2.1 ( Profesional )'
+
+
+                                el sistema a una variable que no es
+                                un objeto.
+
+   9          Bad Parent Msg
+                                Has enviado a Parent() un mensaje de
+                                acceso a Var ¢ de acceso a otro Padre.
+                                S¢lo puedes mandar v°a Parent() mensajes
+                                de MÇtodos.
+
+  10          Parent Exist
+                                Has intentando a§adir un mÇtodo con el
+                                mismo nombre que alguno de los padres de
+                                la clase en creaci¢n. El sistema crea
+                                automaticamente mÇtodos con esos nombres
+                                y no est† permitido sobrescribirlos.
+
+  11          Reservado
+
+  12          No executable
+                                Has mandado el mensaje "exec() a un objeto
+                                "Command" que no es ejecutable. Puedes
+                                comprobar previamente si lo es con el
+                                mÇtodo "lExec()" que devolver† .T. si
+                                se puede ejecutar.
+
+  13          No Command Obj
+                                Mandado el mensaje "send( CommandObj,...)
+                                a un objeto cualquiera, el primer par†metro
+                                no es un objeto Command. Esto es preceptivo.
+
+     Una ventana ALERT te mostrar† el mensaje de error y te preguntar†
+   si quieres terminar ( Quit ). Los errores de 1 a 4 son "Warnings" y
+   adem†s preguntar† si quieres continuar ( Default ).
+
+
+       // - Sea nCount una InstVar PROTECTED de Obj :
+
+         ? Obj:nCount      // resulta ser:  8
+
+         ? Obj:nCount := 2 // Provoca Warning #2. Si eliges "Default"
+                           // se imprime en consola: 2
+
+         ? Obj:nCount      // ahora es:  2
+
+       // - Sea ahora nCount HIDDEN:
+
+         ? Obj:nCount      // Provoca Warning #3. Si Eliges "Default"
+                           // se imprime en consola: 2
+
+       // - Sea ahora PUBLIC pero con protecci¢n de tipo:
+       //   EXPORT nCount AS Character
+
+         ? Obj:nCount := nil // Provoca Warning #4. Si eliges "Default"
+                             // se imprime en consola: NIL
+
+
+                                 - Page 24 -
+Norton Guide: `Objects V 2.1 ( Profesional )'
+
+
+     Si en cualquiera de estos casos eliges "Quit", la aplicaci¢n
+   terminar† como con cualquier otro error irrecuperable, d†ndote por
+   consola la lista de llamadas de la pila y devolviendo la aplicaci¢n
+   un errorlevel = 1.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                 - Page 25 -
+Norton Guide: `Objects V 2.1 ( Profesional )'
+
+
+Menu Choice: General, El debugger de CL5.01
+
+
+
+    Notas sobre el debugger de Clipper 5.01:
+ ============================================================
+
+      Objects no genera "Errores" ni "Warnings" por accesos indebidos
+    hechos por el inspector de objetos del debugger.
+
+      Si haces accesos indebidos ( a variables con protecion de "Type" ),
+    Objects generar† los mensajes correspondientes de aviso y no
+    terminar† la aplicaci¢n.
+
+      Desde el debugger no es posible distinguir entre una variable
+    de Instancia  y una variable de Clase. Solo por esto aconsejo no
+    cambiar datos de objetos con el inspector de objetos sino se est†
+    muy seguro de lo que se est† haciendo.
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                 - Page 26 -
+Norton Guide: `Objects V 2.1 ( Profesional )'
+
+
+Menu Choice: General, Palabras reservadas
+
+
+
+    Palabras reservadas:
+ ============================================================
+
+       Ning£n MÇtodo, InstVar ¢ ClassVar puede tener ninguno de
+    estos nombres:
+
+    Parent, Super, ClassName, ClassH, Send, Virtual, SetGet
+    ======  =====  =========  ======  ====  =======  ======
+
+       Ya que son predefinidos por el sistema para todas las clases.
+    Y no ser†n evaluados por el sistema como tu esperas.
+
+       Ninguna variable ( MEMVAR, LOCAL ¢ STATIC ) dentro del
+    †mbito de un mÇtodo de cualquier CLASE puede llamarse SELF.
+    Self es siempre una variable local del MÇtodo, a la que se
+    asigna automaticamente el objeto mismo. El operador ::<msg>
+    , se traslada siempre a Self:<msg>, se usa para mandar, de
+    modo abreviado, mensajes a Self.
+
+       Ning£n MÇtodo, InstVar ¢ ClassVar de una clase puede llamarse
+    como la propia clase ¢ como alguna de las clases paternas. El
+    sistema crea internamente mÇtodos con esos nombres para facilitar
+    los accesos a los mÇtodos de las clases padres. Si intentas a§adir
+    un mÇtodo ¢ var de esta manera generar†s un error #10.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                 - Page 27 -
+Norton Guide: `Objects V 2.1 ( Profesional )'
+
+
+Menu Choice: Objects, Introducci¢n
+
+
+ Introducci¢n.
+
+    ObjectsP.Lib                         Versi¢n 2.1 ( Profesional )
+
+                     Sistema OOPS para Clipper 5.x
+                     =============================
+
+
+              (c) 1993  Francisco Pulp¢n, Antonio Linares
+
+
+    Esta es una peque§a gu°a del sistema Objects Profesional. En ning£n
+  momento pretende ser un manual de OOPS. Por tanto, se d† por hecho que
+  el usuario conoce ¢ domina suficientemente, el OOPS y su sintaxis
+  habitual sobre la plataforma Clipper 5.xx.
+
+    La idea ObjectsP.lib no naci¢ como proyecto comercial, sino de nuestra
+  necesidad de dominar a fondo la tecnolog°a que usamos; pero, hemos
+  trabajado tanto y tan bien, que, aunque barato, es comercial.
+
+    Este Gestor de Clases es en realidad el sÇptimo de una serie que
+  comenz¢ en Mayo de 1992 el segundo hecho en puro C. Esperamos que su
+  espartana documentaci¢n no le desanime al principio. Ya  que, puede
+  estar seguro, tiene en tus manos un producto flexible ( varias sintaxis,
+  para hoy y para ma§ana ), potente y econ¢mico, con la mejor relaci¢n
+  prestaciones/precio del mercado internacional.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                 - Page 28 -
+Norton Guide: `Objects V 2.1 ( Profesional )'
+
+
+Menu Choice: Objects, Compatibilidad
+
+
+
+   Compatibilidad de Objects 2 Profesional con otros sistemas de Clases.
+ =========================================================================
+
+     Objects sobrescribe el m¢dulo SEND, pero es totalmente compatible
+   con el original. Por esto los m¢dulos compilados para otros sistemas
+   que no sobrescriben el modulo SEND, pueden ser enlazados con los
+   m¢dulos de Objects sin ning£n problema.
+
+     Si lo que usted desea es recompilar su c¢digo para aprovechar todas
+   las ventajas de Objects, no se preocupe, no tendr† que hacer muchas
+   modificaciones en su c¢digo.
+
+     Si el c¢digo que quiere recompilar es para oClip, Dialog ¢
+   Objects 2.0 solo tendr† que incluir "ObjectsP.ch" en lugar del
+   original.
+
+   NOTA: Hasta la fecha no se ha detectado ninguna incompatibilidad
+         ni con Clipper 5.2 ni con el modo protegido de Windows 3.1.
+         De hecho Objects Profesional ha sido probado ampliamente
+         como soporte de Clases de FiveWin 1.0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                 - Page 29 -
+Norton Guide: `Objects V 2.1 ( Profesional )'
+
+
+Menu Choice: Objects, Agradecimientos
+
+
+
+     Muchas gracias y abrazos a...:
+
+         Nuestras Mujeres, Carmen y Silvia, por no habernos tirado a£n
+     el PC y el telÇfono a la cabeza.
+
+         Manuel Cuevas, Boss de MegaByte ( El mejor BetaTester de ObjectsP ),
+     por haber hecho los mejores test de ObjectsP.lib. Ayudando a darle a la
+     librer°a la solidez que la caracteriza.
+
+         Juan Miguel Sosso por su perfecta distribuci¢n.
+
+         Los participantes en las conferencias XBASE de FidoNet por
+     no borrar nuestros mensajes sin leerlos primero.
+
+         Y a t°, por usar ObjectsP.lib
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                 - Page 30 -
+Norton Guide: `Objects V 2.1 ( Profesional )'
+
+
+Menu Choice: Objects, Distribuci¢n
+
+
+
+ ÷ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ∑
+ ∫ Este es otro producto de:                       (fichero libre de virus) ∫
+ ∫                                                                          ∫
+ ∫              RUNsoft: Productos Profesionales para CLIPPER               ∫
+ «ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ∂
+ ∫ Puede solicitar nuestro cat†logo a:                                      ∫
+ ∫                                                                          ∫
+ ∫                                RUNsoft                                   ∫
+ ∫                        Avda. Ricardo Soriano 68                          ∫
+ ∫                         Edf. Horizonte Este 1-7                          ∫
+ ∫                          29,600 Marbella (MA)                            ∫
+ «ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ∂
+ ∫ Y m†s versiones demo/shareware en:                                       ∫
+ ∫                                                                          ∫
+ ∫ bAuHaUs (95)221-3374 (24h) hasta 19,200 baudios, 2:345/201.8@fidonet.org ∫
+ ”ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒΩ
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                 - Page 31 -
+Norton Guide: `Objects V 2.1 ( Profesional )'
+
+
+
+                                I N D E X
+                                ---------
+
+
+
+Sintaxis
+    Logo  .........................................................    2
+    Comandos  .....................................................    3
+    Funciones  ....................................................   11
+
+
+General
+    Generalidades  ................................................   14
+    Declarando una Clase  .........................................   16
+    La herencia.  .................................................   17
+    La Clase "Command"  ...........................................   19
+    Mensajes a Variables  .........................................   22
+    Mensajes de error.  ...........................................   23
+    El debugger de CL5.01  ........................................   26
+    Palabras reservadas  ..........................................   27
+
+
+Objects
+    Introducci¢n  .................................................   28
+    Compatibilidad  ...............................................   29
+    Agradecimientos  ..............................................   30
+    Distribuci¢n  .................................................   31
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                 - Page 32 -
+

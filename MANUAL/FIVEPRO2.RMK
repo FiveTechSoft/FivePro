@@ -1,0 +1,10 @@
+.ngt.ngo:
+   c:\util\guias\ngc $<
+
+
+AFuncion.ngo : AFuncion.ngt
+Funcion.ngo  : Funcion.ngt
+
+
+FivePro2.ng : FivePro2.mnu Funcion.ngo afuncion.ngo
+   c:\util\guias\ngml FivePro2.mnu

@@ -1,0 +1,15 @@
+PATH=C:\compilad\clipper5
+CLIPPER=$(PATH)\bin\clipper
+BLINKER=$(PATH)\bin\blinker
+
+.prg.obj:
+              $(CLIPPER) $< /n /i$(PATH)\include
+
+Testmenu.obj : Testmenu.prg
+Menu.obj     : Menu.prg
+MenuItem.obj : MenuItem.prg
+SayHot.obj   : SayHot.prg
+
+Testmenu.exe : Testmenu.obj Menu.obj MenuItem.obj
+              $(BLINKER) fi Testmenu, menu, MenuItem, SayHot LIB Objects
+              Testmenu

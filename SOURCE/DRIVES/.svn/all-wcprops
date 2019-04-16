@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/svn/!svn/ver/3/trunk/SOURCE/DRIVES
+END
+CABSREAD.ASM
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/3/trunk/SOURCE/DRIVES/CABSREAD.ASM
+END
+BOOT.C
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/3/trunk/SOURCE/DRIVES/BOOT.C
+END
+CABSREAD.C
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/3/trunk/SOURCE/DRIVES/CABSREAD.C
+END
+TEST.PRG
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/3/trunk/SOURCE/DRIVES/TEST.PRG
+END
+LOGDRVES.C
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/3/trunk/SOURCE/DRIVES/LOGDRVES.C
+END
+NVRFSCT.C
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/3/trunk/SOURCE/DRIVES/NVRFSCT.C
+END
+NFRMTRCK.C
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/3/trunk/SOURCE/DRIVES/NFRMTRCK.C
+END
+DRVSELEC.C
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/3/trunk/SOURCE/DRIVES/DRVSELEC.C
+END
+DRIVE.C
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/3/trunk/SOURCE/DRIVES/DRIVE.C
+END
+HARDDISK.C
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/3/trunk/SOURCE/DRIVES/HARDDISK.C
+END
+DISKFREE.C
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/3/trunk/SOURCE/DRIVES/DISKFREE.C
+END
+DRVTYPE.C
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/3/trunk/SOURCE/DRIVES/DRVTYPE.C
+END
+BOOT.ASM
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/3/trunk/SOURCE/DRIVES/BOOT.ASM
+END

@@ -1,0 +1,19 @@
+!name:
+
+!credits:
+       ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+       ³                                                 ³Û
+       ³                                                 ³Û
+       ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙÛ
+        ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+!menu: Menu
+       Clipper.lib              Clipper.ngo
+       Extend.lib               extend.ngo
+       Terminal.lib             terminal.ngo
+       DbfNtx.lib               DbfNtx.ngo
+
+!menu: Menu
+       Defines                  defines.ngo
+       Structures               structures.ngo
+       Public variables         public.ngo
+       About...                 about.ngo

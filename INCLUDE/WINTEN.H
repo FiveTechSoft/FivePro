@@ -1,0 +1,109 @@
+#ifndef _WINTEN_H
+#define _WINTEN_H
+
+//  WinTen.h - To avoid Windows API - Clipper function calling conflicts
+//  Just necesary for functions names with ten characters or less
+
+#define	AbortDoc	_AbortDoc
+#define	AddAtom		_AddAtom
+#define	AnsiToOem	_AnsiToOem
+#define Arc         _Arc
+#define	AppendMenu	_AppendMenu
+#define	BeginPaint	_BeginPaint
+#define	ChooseFont	_ChooseFont
+#define	Chord		_Chord
+#define	CreateDC	_CreateDC
+#define	CreateFont	_CreateFont
+#define	CreateIcon	_CreateIcon
+#define	CreateMenu	_CreateMenu
+#define	CreatePen	_CreatePen
+#define	DeleteDC	_DeleteDC
+#define	DeleteAtom	_DeleteAtom
+#define	DeleteMenu	_DeleteMenu
+#define	DialogBox	_DialogBox
+#define	DrawIcon	_DrawIcon
+#define	DrawText	_DrawText
+#define	Ellipse		_Ellipse
+#define	EndDialog	_EndDialog
+#define	EndDoc		_EndDoc
+#define	EndPage		_EndPage
+#define	EndPaint	_EndPaint
+#define	Escape		_Escape
+#define ExtTextOut  _ExtTextOut
+#define FillRect    _FillRect
+#define	FindAtom	_FindAtom
+#define	FindText	_FindText
+#define	FindWindow	_FindWindow
+#define	FloodFill	_FloodFill
+#define	FrameRect	_FrameRect
+#define	GetBkColor	_GetBkColor
+#define	GetBkMode	_GetBkMode
+#define	GetCursor	GetCursor_3_1	// _GetCursor
+#define	GetDC		_GetDC
+#define	GetDCOrg	_GetDCOrg
+#define	GetDIBits	_GetDIBits
+#define	GetDlgItem	_GetDlgItem
+#define	GetFocus	_GetFocus
+#define	GetMenu		_GetMenu
+#define	GetMessage	_GetMessage
+#define	GetObject	_GetObject
+#define	GetParent	_GetParent
+#define	GetPixel	_GetPixel
+#define GetProp     _GetProp
+#define GetROP2     _GetROP2
+#define	GetSubMenu	_GetSubMenu
+#define	GetVersion	_GetVersion
+#define	GetWindow	_GetWindow
+#define	GlobalFree	_GlobalFree
+#define	GlobalLock	_GlobalLock
+#define	GlobalSize	_GlobalSize
+#define	HideCaret	_HideCaret
+#define	InsertMenu	_InsertMenu
+#define	InvertRect	_InvertRect
+#define	InvertRgn	_InvertRgn
+#define	IsChild		_IsChild
+#define	IsIconic	_IsIconic
+#define	IsMenu		IsMenu_3_1	// _IsMenu
+#define	IsWindow	_IsWindow
+#define	IsZoomed	_IsZoomed
+#define	KillTimer	_KillTimer
+#define	LineTo		_LineTo
+#define	LoadBitmap	_LoadBitmap
+#define	LoadCursor	_LoadCursor
+#define	LoadIcon	_LoadIcon
+#define	LoadString	_LoadString
+#define	MessageBox	_MessageBox
+#define	MoveTo		_MoveTo
+#define	MoveWindow	_MoveWindow
+#define	OemToAnsi	_OemToAnsi
+#define	OpenIcon	_OpenIcon
+#define Pie         _Pie
+#define	Polygon		_Polygon
+#define	Polyline	_Polyline
+#define	PrintDlg	_PrintDlg
+#define	Rectangle	_Rectangle
+#define	ReleaseDC	_ReleaseDC
+#define RemoveProp  _RemoveProp
+#define RoundRect   _RoundRect
+#define	SetBkColor	_SetBkColor
+#define	SetBkMode	_SetBkMode
+#define	SetCursor	_SetCursor
+#define	SetFocus	_SetFocus
+#define	SetMenu		_SetMenu
+#define	SetPixel	_SetPixel
+#define SetProp     _SetProp
+#define	SetROP2		_SetROP2
+#define	SetTimer	_SetTimer
+#define	ShowCaret	_ShowCaret
+#define	ShowCursor	_ShowCursor
+#define	ShowWindow	_ShowWindow
+#define	StartDoc	_StartDoc
+#define	StartPage	_StartPage
+#define	TextOut		_TextOut
+#define	UnionRect	_UnionRect
+#define	WinExec		_WinExec
+#define	WinHelp		_WinHelp
+#define	wsprintf	_wsprintf
+#define	Yield		_Yield
+
+#endif

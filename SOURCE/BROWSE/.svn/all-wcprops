@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/svn/!svn/ver/3/trunk/SOURCE/BROWSE
+END
+BROWSE.PRG
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/3/trunk/SOURCE/BROWSE/BROWSE.PRG
+END
+ABROWSE.PRG
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/3/trunk/SOURCE/BROWSE/ABROWSE.PRG
+END
+QBROWSE.PRG
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/3/trunk/SOURCE/BROWSE/QBROWSE.PRG
+END
+RECBROW.PRG
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/3/trunk/SOURCE/BROWSE/RECBROW.PRG
+END
+BRWARRAY.PRG
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/3/trunk/SOURCE/BROWSE/BRWARRAY.PRG
+END
+BRWSTABL.C
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/3/trunk/SOURCE/BROWSE/BRWSTABL.C
+END
+BRWCOLS.PRG
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/3/trunk/SOURCE/BROWSE/BRWCOLS.PRG
+END
+BROWTEXT.PRG
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/3/trunk/SOURCE/BROWSE/BROWTEXT.PRG
+END
+RECORD.PRG
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/3/trunk/SOURCE/BROWSE/RECORD.PRG
+END
+BRWEXEC.PRG
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/3/trunk/SOURCE/BROWSE/BRWEXEC.PRG
+END
